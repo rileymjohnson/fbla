@@ -7,7 +7,6 @@ from app.extensions import login_manager
 from app.public.forms import LoginForm
 from app.user.forms import RegisterForm
 from app.user.models import User
-from app.utils import flash_errors
 
 blueprint = Blueprint('public', __name__, static_folder='../static')
 
