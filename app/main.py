@@ -13,7 +13,16 @@ def create_app(config_object=Config):
     register_extensions(app)
     register_blueprints(app)
     register_errorhandlers(app)
+    setup_logging(app)
     return app
+
+#set up gunicorn logging in production
+def setup_logging(app):
+    if not app.debug:
+        # In production mode, add log handler to sys.stderr.
+        app.logger.addHandler(logging.StreamHandler())
+        app.logger.setLevel(logging.INFO)
+    return None
 
 #register flask extensions
 def register_extensions(app):
