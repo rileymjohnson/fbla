@@ -11,6 +11,7 @@ def create_app(config_object=Config):
     app = Flask(__name__)
     app.config.from_object(config_object)
     register_extensions(app)
+    register_jinja_extensions(app)
     register_blueprints(app)
     register_errorhandlers(app)
     setup_logging(app)
@@ -41,11 +42,20 @@ def register_blueprints(app):
     app.register_blueprint(admin.views.blueprint)
     return None
 
+#add jinja extensions
+def register_jinja_extensions(app):
+    def get_year(*args): #returns the current year
+        import datetime
+        now = datetime.datetime.now()
+        return now.year
+    app.jinja_env.filters['currentYear'] = get_year #creates a filter that returns the current year
+    return None
+
 #register error handlers
 def register_errorhandlers(app):
     def render_error(error):
         error_code = getattr(error, 'code', 500)
-        return render_template("error.html", error=error_code)
+        return render_template("error.html", error=error_code), error_code
     for errcode in [401, 404, 500]:
         app.errorhandler(errcode)(render_error)
     return None

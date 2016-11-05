@@ -1,0 +1,87 @@
+/**
+* @subsection   Countdown.css
+*
+* @description  A jQuery plugin that sets a div or span to show a countdown to a given time.
+*
+* @author       Keith Wood
+* @link         http://keith-wood.name/countdown.html
+* @license      MIT license - http://www.opensource.org/licenses/mit-license.php
+**/
+.is-countdown {
+  display: inline-block;
+  width: 100%;
+}
+
+.countdown-row {
+  display: block;
+  width: 100%;
+  margin-top: -20px;
+  text-align: center;
+}
+
+.countdown-section {
+  display: block;
+  width: auto;
+  max-width: 300px;
+  margin: 20px auto 0;
+  padding: 10px 0;
+  border-radius: 9px;
+  text-align: center;
+  background-color: rgba(62, 62, 62, 0.2);
+}
+
+.countdown-amount,
+.countdown-period {
+  display: inline;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.countdown-period {
+  margin-left: 10px;
+}
+
+.countdown-rtl {
+  direction: rtl;
+}
+
+.countdown-holding span {
+  color: #888;
+}
+
+.countdown-descr {
+  display: block;
+  width: 100%;
+}
+
+@media (min-width: 700px) {
+  .countdown-section {
+    display: inline-block;
+    width: 18.1%;
+    padding: 27px 0 23px;
+  }
+
+  .countdown-amount {
+    display: block;
+    font-size: 70px;
+  }
+
+  .countdown-period {
+    display: block;
+    font-size: 24px;
+    line-height: 1.5;
+    margin-left: 0;
+  }
+
+  * + .countdown-section {
+    margin-left: 9.2%;
+  }
+}
+@media (min-width: 992px) {
+  .is-countdown {
+    width: 735px;
+  }
+}
+
+/*# sourceMappingURL=countdown.css.map */

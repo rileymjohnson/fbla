@@ -1,1 +1,214 @@
-the home page
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% include "public_pages/includes/headerContent.html" %}
+    <link rel="stylesheet" href="/static/public/css/lib/camera.css">
+	<link rel="stylesheet" href="/static/public/css/lib/google-map.css">
+	<link rel="stylesheet" href="/static/public/css/lib/countdown.css">
+</head>
+<body>
+<div class="page">
+	<!--========================================================
+	                          HEADER
+	=========================================================-->
+	<header>
+		<section class="bg-primary text-center">
+			<div class="container">
+				<!-- Brand -->
+				<a class="brand" href="./">
+					<div class="brand_name">Vanilla</div>
+					<div class="brand_slogan">Water park</div>
+				</a>
+				<!-- END Brand -->
+			</div>
+		</section>
+
+		<section>
+			<!-- Camera -->
+			<div class="camera_container">
+			  <div id="camera" class="camera_wrap">
+			    <div data-src="/static/public/images/camera-1.jpg">
+			      <div class="camera_caption fadeIn">
+			      	<div class="container"><span>We offer premier holiday attractions</span></div>
+			      </div>
+			    </div>
+			    <div data-src="/static/public/images/camera-2.jpg">
+			      <div class="camera_caption fadeIn">
+			      	<div class="container"><span>Tube rides, body slides, and wave pools with heated water</span></div>
+			      </div>
+			    </div>
+			    <div data-src="/static/public/images/camera-3.jpg">
+			      <div class="camera_caption fadeIn">
+			      	<div class="container"><span>An exciting variety of water rides and slides</span></div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			<!-- END Camera -->
+		</section>
+
+		<!-- Stuck Container -->
+		<div id="stuck_container" class="stuck_container">
+			<div class="container">
+				<!-- Menu  -->
+				<nav class="nav">
+					<ul class="sf-menu" data-type="navbar">
+						<li class="active"><a href='./'>Home</a></li>
+						<li><a href='index-1.html'>Park info</a>
+							<ul>
+								<li><a href="#">General Info</a></li>
+								<li><a href="#">Hours</a></li>
+								<li><a href="#">Programs</a>
+									<ul>
+										<li><a href="#">Water babies</a></li>
+										<li><a href="#">Sea sprites</a></li>
+										<li><a href="#">Swim stars</a></li>
+										<li><a href="#">Junior camp</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Parking</a></li>
+							</ul>
+						</li>
+						<li><a href='index-2.html'>Packages</a></li>
+						<li><a href='index-3.html'>Attractions</a></li>
+						<li><a href='index-4.html'>Contacts</a></li>
+					</ul>
+				</nav>
+				<!-- END Menu -->
+			</div>
+		</div>
+		<!-- END Stuck Container -->
+
+	</header>
+	<!--========================================================
+	                          CONTENT
+	=========================================================-->
+	<main>
+		<section class="well-sm bg-secondary-1 text-center">
+			<div class="container">
+				<h1 class="upper">Christmas begins in</h1>
+				<div id="defaultCountdown"></div>
+			</div>
+		</section>
+
+		<section class="well-md well-md--inset-1 bg-secondary-2 text-center">
+			<div class="container">
+				<div class="row flow-offset-1">
+
+					<div class="col-sm-6 col-md-3">
+						<img class="circle" src="/static/public/images/page-01_img01.jpg" alt="">
+						<h3>Birthday parties</h3>
+						<p>Water Park of America is known far and wide as the hottest place to host your kid's birthday party.</p>
+						<a href="#" class="btn btn-primary btn-md">More</a>
+					</div>
+
+					<div class="col-sm-6 col-md-3">
+						<img class="circle" src="/static/public/images/page-01_img02.jpg" alt="">
+						<h3>Group <br class="hided">info</h3>
+						<p>Vanilla is the perfect summer destination to host your group. Our staff is happy to handle all the details.</p>
+						<a href="#" class="btn btn-primary btn-md">More</a>
+					</div>
+
+					<div class="col-sm-6 col-md-3">
+						<img class="circle" src="/static/public/images/page-01_img03.jpg" alt="">
+						<h3>Gift <br class="hided">cards</h3>
+						<p>A Vanilla gift card can be redeemed anywhere in the park including admission.</p>
+						<a href="#" class="btn btn-primary btn-md">More</a>
+					</div>
+
+					<div class="col-sm-6 col-md-3">
+						<img class="circle" src="/static/public/images/page-01_img04.jpg" alt="">
+						<h3>Specials & events</h3>
+						<p>Keep up to date on our schedule of in-park events as well as our social media contests!</p>
+						<a href="#" class="btn btn-primary btn-md">More</a>
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+		<section class="well-md well-md--inset-2 text-center">
+			<div class="container">
+				<h2>Real Sand. Real Surf. Real Fun!</h2>
+				<h6>We specialize in company picnics, family reunions, birthday parties and outings for a variety of clubs and organizations including church groups, school groups, karate schools.</h6>
+				<div class="col-md-offset-1 col-md-10 video">
+					<iframe src="//player.vimeo.com/video/68771187?wmode=transparent" allowfullscreen></iframe>
+				</div>
+			</div>
+		</section>
+
+		<section class="bg-primary well-md well-md--inset-2 text-center">
+			<div class="container">
+				<h2>Upcoming events</h2>
+				<div class="row offset-1 flow-offset-1">
+
+					<div class="col-md-4">
+						<div class="event-post text-left">
+							<p class="meta"><span>09</span>august/2015</p>
+							<h4>Homeschool<br>day</h4>
+							<p>Are you a homeschool student, parent or teacher? Join us for a day of fun for only $9.95. Just purchase your tickets on June 2nd at the ticketbooth and mention "Homeschool" to receive your discount!</p>
+							<a href="#" class="btn btn-primary btn-md">More</a>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="event-post text-left">
+							<p class="meta"><span>12</span>august/2015</p>
+							<h4>Friday night <br>splash</h4>
+							<p>Join us for a special ticketed event. The Vanilla will be open extended hours from 4pm till 8pm. Admission tickets are $7.95 per person (or a $3.00 upgrade with the same day regular park admission ticket).</p>
+							<a href="#" class="btn btn-primary btn-md">More</a>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="event-post text-left">
+							<p class="meta"><span>21</span>august/2015</p>
+							<h4>Father's day <br>celebration</h4>
+							<p>Celebrate Fathers with us! Father's are in FREE with a paid child's ticket. Mention code: DAD DAY at the ticketbooth on Sunday, June 21 for the discount with purchase!</p>
+							<a href="#" class="btn btn-primary btn-md">More</a>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+		<!-- Google Map -->
+		<section class="map">
+		  <div id="google-map" class="map_model" data-y="40.721114" data-x="-73.884811"></div>
+		  <ul class="map_locations">
+		    <li data-y="40.721255" data-x="-73.884664">
+		      <p> 9870 St Vincent Place, Glasgow, DC 45 Fr 45. <span>800 2345-6789</span></p>
+		    </li>
+		  </ul>
+		</section>
+		<!-- END Google Map -->
+	</main>
+	<!--========================================================
+	                          FOOTER
+	=========================================================-->
+	<footer class="bg-primary text-center">
+		<div class="container">
+			<!-- Inline List -->
+			<ul class="inline-list">
+			  <li><a href="#" class="icon icon-lg icon-secondary-2 fa-twitter"></a></li>
+				<li><a href="#" class="icon icon-lg icon-secondary-2 fa-facebook"></a></li>
+				<li><a href="#" class="icon icon-lg icon-secondary-2 fa-google-plus"></a></li>
+				<li><a href="#" class="icon icon-lg icon-secondary-2 fa-instagram"></a></li>
+			</ul>
+			<!-- END Inline List -->
+			<div class="offset-2">
+				<a href="./">Vanilla</a>
+				 &copy; <span id="copyright-year">{{ None|currentYear }}</span> |
+				<a href="index-5.html">Privacy Policy</a>
+			</div>
+			More Amusement Park Website Templates at <a rel="nofollow" href="http://www.templatemonster.com/category/amusement-park-website-templates/" target="_blank">TemplateMonster.com</a>
+		</div>
+	</footer>
+</div>
+
+{%include "public_pages/includes/scripts.html" %}
+<script src="/static/public/js/index.js"></script>
+<!--<script src="/static/public/js/script.js"></script>-->
+</body>
+</html>

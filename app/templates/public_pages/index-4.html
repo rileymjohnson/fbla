@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Contacts</title>
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no"/>
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+	<link href='css/font-awesome.css' rel='stylesheet'>
+	<link href='//fonts.googleapis.com/css?family=Playball%7CComfortaa:400,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/grid.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/rd-mailform.css">
+	<link rel="stylesheet" href="css/google-map.css">
+
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery-migrate-1.2.1.js"></script> 
+
+	<!--[if lt IE 9]> 
+	<html class="lt-ie9">
+	<div style=' clear: both; text-align:center; position: relative;'>
+		<a href="http://windows.microsoft.com/en-US/internet-explorer/..">
+			<img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820"
+					 alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."/>
+		</a>
+	</div>
+	<script src="js/html5shiv.js"></script>
+	<![endif]-->
+
+	<script src='js/device.min.js'></script>
+</head>
+<body>
+<div class="page">
+	<!--========================================================
+	                          HEADER
+	=========================================================-->
+	<header>
+		<section class="bg-primary text-center">
+			<div class="container">
+				<!-- Brand -->
+				<div class="brand">
+					<a class="brand_name" href="./">Vanilla</a>
+					<div class="brand_slogan">Water park</div>
+				</div>
+				<!-- END Brand -->
+			</div>
+		</section>
+
+		<section class="bg-image-1"></section>
+
+		<section>
+			<!-- Stuck Container -->
+			<div id="stuck_container" class="stuck_container">
+				<div class="container">
+					<!-- Menu  -->
+					<nav class="nav">
+						<ul class="sf-menu" data-type="navbar">
+							<li><a href='./'>Home</a></li>
+							<li><a href='index-1.html'>Park info</a>
+								<ul>
+									<li><a href="#">General Info</a></li>
+									<li><a href="#">Hours</a></li>
+									<li><a href="#">Programs</a>
+										<ul>
+											<li><a href="#">Water babies</a></li>
+											<li><a href="#">Sea sprites</a></li>
+											<li><a href="#">Swim stars</a></li>
+											<li><a href="#">Junior camp</a></li>
+										</ul>
+									</li>
+									<li><a href="#">Parking</a></li>
+								</ul>
+							</li>
+							<li><a href='index-2.html'>Packages</a></li>
+							<li><a href='index-3.html'>Attractions</a></li>
+							<li class="active"><a href='index-4.html'>Contacts</a></li>
+						</ul>
+					</nav>
+					<!-- END Menu -->
+				</div>
+			</div>
+			<!-- END Stuck Container -->
+		</section>
+
+	</header>
+	<!--========================================================
+	                          CONTENT
+	=========================================================-->
+	<main>
+		<section class="well-md text-center">
+			<div class="container">
+				<h2>Contact form</h2>
+				
+					<!-- RD-Mailform -->
+					<form class="rd-mailform" method="post" action="bat/rd-mailform.php">
+						<input type="hidden" name="form-type" value="contact"/>
+						<fieldset>
+					
+							<label data-add-placeholder="">
+								<input type="text"
+								name="name"
+								placeholder="Name*"
+								data-constraints="@NotEmpty @LettersOnly"/>
+							</label>
+					
+							<label data-add-placeholder="">
+								<input type="text"
+								name="email"
+								placeholder="E-mail*"
+								data-constraints="@NotEmpty @Email"/>
+							</label>
+
+							<label data-add-placeholder="" class="wide">
+								<input type="text"
+								name="phone"
+								placeholder="Phone"
+								data-constraints="@Phone"/>
+							</label>
+					
+							<label data-add-placeholder="" class="wide textarea">
+								<textarea
+								name="message"
+								placeholder="Message*"
+								data-constraints="@NotEmpty"></textarea>
+							</label>
+					
+							<div class="mfControls">
+								<button class="btn btn-primary btn-xl" type="submit">Send message</button>
+							</div>
+					
+							<div class="mfInfo"></div>
+						</fieldset>
+					</form>
+					<!-- END RD-Mailform -->
+
+			</div>
+		</section>
+
+		<section class="well-md well-md--inset-2 bg-primary">
+			<div class="container">
+				<div class="row flow-offset-2">
+
+					<div class="col-md-4">
+						<!-- Box -->
+						<div class='box box--mod-1'>
+							<div class='box_left'><div class="icon icon-md icon-secondary fa-map-marker"></div></div>
+							<!-- Contact Info -->
+							<div class='box_cnt contact-info'>
+								<dl><dt>Address:</dt><dd><address><a href="#">8901 Marmora Road, Glasgow, D04 89GR.</a></address></dd></dl>
+							</div>
+							<!-- END Contact Info -->
+						</div>
+						<!-- END Box -->
+					</div>
+
+					<div class="col-md-4">
+						<!-- Box -->
+						<div class='box box--mod-1'>
+							<div class='box_left'><div class="icon icon-md icon-secondary fa-phone"></div></div>
+							<!-- Contact Info -->
+							<div class='box_cnt contact-info'>
+								<dl><dt>Telephones:</dt><dd><a href="callto:#">+1 800 559 6580</a>, <a href="callto:#">+1 800 603 6035</a></dd></dl>
+							</div>
+							<!-- END Contact Info -->
+						</div>
+						<!-- END Box -->
+					</div>
+
+					<div class="col-md-4">
+						<!-- Box -->
+						<div class='box box--mod-1'>
+							<div class='box_left'><div class="icon icon-md icon-secondary fa-envelope"></div></div>
+							<!-- Contact Info -->
+							<div class='box_cnt contact-info'>
+								<dl><dt>E-mail:</dt><dd><a href="mailto:#"> mail@demolink.org</a></dd></dl>
+							</div>
+							<!-- END Contact Info -->
+						</div>
+						<!-- END Box -->
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+		<!-- Google Map -->
+		<section class="map">
+		  <div id="google-map" class="map_model" data-y="40.721114" data-x="-73.884811"></div>
+		  <ul class="map_locations">
+		    <li data-y="40.721255" data-x="-73.884664">
+		      <p> 9870 St Vincent Place, Glasgow, DC 45 Fr 45. <span>800 2345-6789</span></p>
+		    </li>
+		  </ul>
+		</section>
+		<!-- END Google Map -->
+
+	</main>
+	<!--========================================================
+	                          FOOTER
+	=========================================================-->
+	<footer class="bg-primary text-center">
+		<div class="container">
+			<!-- Inline List -->
+			<ul class="inline-list">
+			  <li><a href="#" class="icon icon-lg icon-secondary-2 fa-twitter"></a></li>
+				<li><a href="#" class="icon icon-lg icon-secondary-2 fa-facebook"></a></li>
+				<li><a href="#" class="icon icon-lg icon-secondary-2 fa-google-plus"></a></li>
+				<li><a href="#" class="icon icon-lg icon-secondary-2 fa-instagram"></a></li>
+			</ul>
+			<!-- END Inline List -->
+			<div class="offset-2">
+				<a href="./">Vanilla</a>
+				 &copy; <span id="copyright-year">2016</span> |
+				<a href="index-5.html">Privacy Policy</a>
+			</div>
+		</div>
+	</footer>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

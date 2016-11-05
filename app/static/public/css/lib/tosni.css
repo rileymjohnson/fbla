@@ -1,0 +1,150 @@
+/*
+* @subsection News post
+*/
+.news-post {
+  position: relative;
+  display: inline-block;
+}
+.news-post img {
+  width: 100%;
+  height: auto;
+}
+.news-post .mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(91, 123, 221, 0.4);
+}
+.news-post .post-meta {
+  position: absolute;
+  top: 13%;
+  right: 0;
+  background: rgba(91, 123, 221, 0.8);
+  width: 70px;
+  height: 137px;
+  padding-top: 18px;
+  font-family: "Brush Script Std", sans-serif;
+  font-size: 26px;
+  color: #fff;
+  text-align: center;
+  line-height: 1.3;
+  letter-spacing: 0.1em;
+  -moz-transition: 0.2s all ease;
+  -o-transition: 0.2s all ease;
+  -webkit-transition: 0.2s all ease;
+  transition: 0.2s all ease;
+}
+.news-post .caption {
+  position: relative;
+  background: #fff;
+  padding: 26px 18px;
+  min-height: 144px;
+  border-bottom: 3px solid #c4cdf0;
+  z-index: 1;
+}
+.news-post .caption h6 {
+  line-height: 1;
+  color: #555555;
+}
+.news-post .caption p {
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  line-height: 2;
+  color: #555555;
+}
+.news-post:hover .post-meta {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 47%;
+}
+
+/*
+* @subsection Product
+*/
+.product {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  width: 80%;
+}
+.product img {
+  width: 100%;
+  height: auto;
+  -moz-transition: 0.5s all ease;
+  -o-transition: 0.5s all ease;
+  -webkit-transition: 0.5s all ease;
+  transition: 0.5s all ease;
+}
+.product .mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(91, 123, 221, 0.4);
+}
+.product .caption {
+  position: relative;
+  z-index: 2;
+  background: #fff;
+  border-bottom: 3px solid #c4cdf0;
+  -moz-transition: 0.5s all ease;
+  -o-transition: 0.5s all ease;
+  -webkit-transition: 0.5s all ease;
+  transition: 0.5s all ease;
+  padding: 27px 18px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+}
+.product .caption p {
+  line-height: 2;
+  letter-spacing: -0.03em;
+  color: #555555;
+}
+.product .caption a {
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  color: #555555;
+}
+.product .caption a:hover {
+  text-decoration: underline;
+}
+.product a + p {
+  margin-top: 14px;
+}
+.product:hover img {
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+.product:hover .caption {
+  position: relative;
+  z-index: 2;
+  background: #c4cdf0;
+  color: #fff;
+  border-bottom: 3px solid #5b7bdd;
+}
+.product:hover .caption a, .product:hover .caption p {
+  color: #fff;
+}
+@media (min-width: 480px) {
+  .product {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .product {
+    width: 80%;
+  }
+}
+@media (min-width: 992px) {
+  .product {
+    width: 100%;
+  }
+}
