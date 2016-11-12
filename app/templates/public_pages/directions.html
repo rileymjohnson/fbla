@@ -4,37 +4,14 @@
     <!--main header content-->
 	{% include "public_pages/includes/headerContent.html" %}
     <!--additonal page specific styles-->
+    <link href="{{ url_for("static", filename="public/css/directions.css")}}" rel="stylesheet" />
     <link href='https://api.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.css' rel='stylesheet' />
     <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v2.2.0/mapbox-gl-directions.css' type='text/css' />
-    <style>
-        body { margin:0; padding:0; }
-        #map { position:absolute; top:0; bottom:0; width:100%; }
-    </style>
 </head>
 <body>
     <div id="map"></div>
-    
-    
-<script src='https://api.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.js'></script>
-<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v2.2.0/mapbox-gl-directions.js'></script>
-<script>
-mapboxgl.accessToken = 'pk.eyJ1IjoicmlsZXltam9obnNvbiIsImEiOiJjaXY1bGptMzAwMWhtMnluNnd2bzk1cjBzIn0.FicxbRtge8W-_mxFb_Qk1A';
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v9',
-    center: [-79.4512, 43.6568],
-    zoom: 13
-});
-    
-var directions = new mapboxgl.Directions({
-    proximity: [-79.4512, 43.6568]
-})
-
-map.on("load", function() {
-    directions.setDestination("308 rainbow dr carrboro nc")
-})
-    
-map.addControl(directions);
-</script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.js'></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v2.2.0/mapbox-gl-directions.js'></script>
+    <script src="{{ url_for("static", filename="public/js/directions.js")}}"></script>
 </body>
 </html>

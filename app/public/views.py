@@ -1,5 +1,5 @@
 #public blueprint
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, url_for
 
 blueprint = Blueprint('public', __name__, url_prefix='/', static_folder='../static', template_folder='../templates')
 
