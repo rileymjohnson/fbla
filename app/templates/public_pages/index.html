@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--main header content-->
 	{% include "public_pages/includes/headerContent.html" %}
+    <!--additonal page specific styles-->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="/static/public/css/lib/camera.css">
 	<link rel="stylesheet" href="/static/public/css/lib/google-map.css">
 	<link rel="stylesheet" href="/static/public/css/lib/countdown.css">
@@ -184,31 +187,11 @@
 		</section>
 		<!-- END Google Map -->
 	</main>
-	<!--========================================================
-	                          FOOTER
-	=========================================================-->
-	<footer class="bg-primary text-center">
-		<div class="container">
-			<!-- Inline List -->
-			<ul class="inline-list">
-			  <li><a href="#" class="icon icon-lg icon-secondary-2 fa-twitter"></a></li>
-				<li><a href="#" class="icon icon-lg icon-secondary-2 fa-facebook"></a></li>
-				<li><a href="#" class="icon icon-lg icon-secondary-2 fa-google-plus"></a></li>
-				<li><a href="#" class="icon icon-lg icon-secondary-2 fa-instagram"></a></li>
-			</ul>
-			<!-- END Inline List -->
-			<div class="offset-2">
-				<a href="./">Vanilla</a>
-				 &copy; <span id="copyright-year">{{ None|currentYear }}</span> |
-				<a href="index-5.html">Privacy Policy</a>
-			</div>
-			More Amusement Park Website Templates at <a rel="nofollow" href="http://www.templatemonster.com/category/amusement-park-website-templates/" target="_blank">TemplateMonster.com</a>
-		</div>
-	</footer>
+	{% include "public_pages/includes/footer.html" %}
 </div>
 
 {%include "public_pages/includes/scripts.html" %}
+<script src='https://api.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.js'></script>
 <script src="/static/public/js/index.js"></script>
-<!--<script src="/static/public/js/script.js"></script>-->
 </body>
 </html>
