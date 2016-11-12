@@ -5,9 +5,9 @@
 	{% include "public_pages/includes/headerContent.html" %}
     <!--additonal page specific styles-->
     <link href='https://api.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.css' rel='stylesheet' />
-    <link rel="stylesheet" href="/static/public/css/lib/camera.css">
-	<link rel="stylesheet" href="/static/public/css/lib/google-map.css">
-	<link rel="stylesheet" href="/static/public/css/lib/countdown.css">
+    <link rel="stylesheet" href="{{ url_for("static", filename="public/css/lib/camera.css") }}">
+	<link rel="stylesheet" href="{{ url_for("static", filename="public/css/lib/map.css") }}">
+	<link rel="stylesheet" href="{{ url_for("static", filename="public/css/lib/countdown.css") }}">
 </head>
 <body>
 <div class="page">
@@ -15,16 +15,7 @@
 	                          HEADER
 	=========================================================-->
 	<header>
-		<section class="bg-primary text-center">
-			<div class="container">
-				<!-- Brand -->
-				<a class="brand" href="./">
-					<div class="brand_name">Vanilla</div>
-					<div class="brand_slogan">Water park</div>
-				</a>
-				<!-- END Brand -->
-			</div>
-		</section>
+        {% include "public_pages/includes/brand.html" %}
 
 		<section>
 			<!-- Camera -->
@@ -50,38 +41,7 @@
 			<!-- END Camera -->
 		</section>
 
-		<!-- Stuck Container -->
-		<div id="stuck_container" class="stuck_container">
-			<div class="container">
-				<!-- Menu  -->
-				<nav class="nav">
-					<ul class="sf-menu" data-type="navbar">
-						<li class="active"><a href='./'>Home</a></li>
-						<li><a href='index-1.html'>Park info</a>
-							<ul>
-								<li><a href="#">General Info</a></li>
-								<li><a href="#">Hours</a></li>
-								<li><a href="#">Programs</a>
-									<ul>
-										<li><a href="#">Water babies</a></li>
-										<li><a href="#">Sea sprites</a></li>
-										<li><a href="#">Swim stars</a></li>
-										<li><a href="#">Junior camp</a></li>
-									</ul>
-								</li>
-								<li><a href="#">Parking</a></li>
-							</ul>
-						</li>
-						<li><a href='index-2.html'>Packages</a></li>
-						<li><a href='index-3.html'>Attractions</a></li>
-						<li><a href='index-4.html'>Contacts</a></li>
-					</ul>
-				</nav>
-				<!-- END Menu -->
-			</div>
-		</div>
-		<!-- END Stuck Container -->
-
+		{% include "public_pages/includes/nav.html" %}
 	</header>
 	<!--========================================================
 	                          CONTENT
@@ -181,7 +141,7 @@
 		  <div id="google-map" class="map_model" data-y="40.721114" data-x="-73.884811"></div>
 		  <ul class="map_locations">
 		    <li data-y="40.721255" data-x="-73.884664">
-		      <p> 9870 St Vincent Place, Glasgow, DC 45 Fr 45. <span>800 2345-6789</span></p>
+		      <p> 3738 Parkwood Dr Houston, TX 77021-1510. <span>919 360-9335</span></p>
 		    </li>
 		  </ul>
 		</section>
@@ -192,6 +152,6 @@
 
 {%include "public_pages/includes/scripts.html" %}
 <script src='https://api.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.js'></script>
-<script src="/static/public/js/index.js"></script>
+<script src="{{ url_for("static", filename="public/js/index.js") }}"></script>
 </body>
 </html>
