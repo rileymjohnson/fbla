@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--main header content-->
+	{% include "public_pages/includes/headerContent.html" %}
+</head>
+<body>
+<div class="page">
+	<!--========================================================
+	                          HEADER
+	=========================================================-->
+	<header>
+        {% include "public_pages/includes/brand.html" %}
+
+		<section class="bg-image-1"></section>
+
+		{% include "public_pages/includes/nav.html" %}
+	</header>
+	<!--========================================================
+	                          CONTENT
+	=========================================================-->
+	<main>
+		<section class="well-md bg-secondary-1 text-center">
+			<div class="container text-center">
+				<h2>Park map</h2>
+				<img src="{{ url_for('static', filename='public/images/page-04_img01.jpg') }}" alt="">
+				<h4>Deep River Waterpark Attractions and Amenities Map.</h4>
+			</div>
+		</section>
+
+		<section class="well-md well-md--inset-2 text-center">
+			<div class="container">
+				<h2>Our attractions</h2>
+				<div class="row offset-4 flow-offset-2 text-center text-sm-left">
+					
+					<div class="col-sm-6 col-md-4">
+						<img src="{{ url_for('static', filename='public/images/page-04_img02.jpg') }}" alt="">
+						<h4 class="secondary-1"><a href="#">Cape Fear</a></h4>
+						<p>Cape Fear screams from a 30-foot-high platform through a darkened tunnel for a length of 215 feet, using single or double inflated tubes.</p>
+					</div>
+
+					<div class="col-sm-6 col-md-4">
+						<img src="{{ url_for('static', filename='public/images/page-04_img03.jpg') }}" alt="">
+						<h4 class="secondary-1"><a href="#">Fun-L-Tunnel</a></h4>
+						<p>The Fun-L-Tunnel is a slide on the wild side. This narrow darkened tunnel drops 30 feet without a tube.</p>
+					</div>
+
+					<div class="col-sm-6 col-md-4">
+						<img src="{{ url_for('static', filename='public/images/page-04_img04.jpg') }}" alt="">
+						<h4 class="secondary-1"><a href="#">Zoom Flume</a></h4>
+						<p>It descends from the same 30-foot-high tower as the Cape Fear and Fun-L-Tunnel and goes on for 200 feet.</p>
+					</div>
+
+					<div class="col-sm-6 col-md-clear col-md-4">
+						<img src="{{ url_for('static', filename='public/images/page-04_img05.jpg') }}" alt="">
+						<h4 class="secondary-1"><a href="#">Drop-Slides</a></h4>
+						<p>The Drop Slides offer a thrill factor by giving guests a similar feeling to free falling with nothing in the way to slow you down.</p>
+					</div>
+
+					<div class="col-sm-6 col-md-4">
+						<img src="{{ url_for('static', filename='public/images/page-04_img06.jpg') }}" alt="">
+						<h4 class="secondary-1"><a href="#">Ecological Boardwalk</a></h4>
+						<p>Located along the shores of beautiful Lake Kennedy, the Ecological Boardwalk is a terrific place to take a walk and enjoy nature.</p>
+					</div>
+
+					<div class="col-sm-6 col-md-4">
+						<img src="{{ url_for('static', filename='public/images/page-04_img07.jpg') }}" alt="">
+						<h4 class="secondary-1"><a href="#">Family Pool</a></h4>
+						<p>Whether you float in from the Main Stream River or take advantage of our zero-depth entrance, the Family Pool is a great place to cool off and have fun.</p>
+					</div>
+
+					<div class="col-sm-6 col-md-4">
+						<img src="{{ url_for('static', filename='public/images/page-04_img08.jpg') }}" alt="">
+						<h4 class="secondary-1"><a href="#">Pro Racers</a></h4>
+						<p>These child-sized slides are not as scary as the big rides giving little ones a chance to enjoy thrills made especially for them</p>
+					</div>
+
+					<div class="col-sm-6 col-md-4">
+						<img src="{{ url_for('static', filename='public/images/page-04_img09.jpg') }}" alt="">
+						<h4 class="secondary-1"><a href="#">Electric Slide</a></h4>
+						<p>The Electric Slide drops five stories, twisting and turning for 457 feet, sending riders on a 27-second plunge into its own pool.</p>
+					</div>
+
+					<div class="col-sm-6 col-md-4">
+						<img src="{{ url_for('static', filename='public/images/page-04_img10.jpg') }}" alt="">
+						<h4 class="secondary-1"><a href="#">Thunder Bump</a></h4>
+						<p>The longest of three, high-speed slides and features several steep bumps that give guests the feeling of going airborne.</p>
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+	</main>
+	{% include "public_pages/includes/footer.html" %}
+</div>
+
+{%include "public_pages/includes/scripts.html" %}
+</body>
+</html>

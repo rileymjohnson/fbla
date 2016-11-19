@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--main header content-->
+	{% include "public_pages/includes/headerContent.html" %}
+    <!--additional page specific styles-->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="{{ url_for('static', filename='public/css/lib/map.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='public/css/lib/rd-mailform.css') }}">
+</head>
+<body>
+<div class="page">
+	<!--========================================================
+	                          HEADER
+	=========================================================-->
+	<header>
+        {% include "public_pages/includes/brand.html" %}
+
+		<section class="bg-image-1"></section>
+
+		{% include "public_pages/includes/nav.html" %}
+	</header>
+	<!--========================================================
+	                          CONTENT
+	=========================================================-->
+	<main>
+		<section class="well-md text-center">
+			<div class="container">
+				<h2>Contact form</h2>
+				
+					<!-- RD-Mailform -->
+					<form class="rd-mailform" method="post" action="bat/rd-mailform.php">
+						<input type="hidden" name="form-type" value="contact"/>
+						<fieldset>
+					
+							<label data-add-placeholder="">
+								<input type="text"
+								name="name"
+								placeholder="Name*"
+								data-constraints="@NotEmpty @LettersOnly"/>
+							</label>
+					
+							<label data-add-placeholder="">
+								<input type="text"
+								name="email"
+								placeholder="E-mail*"
+								data-constraints="@NotEmpty @Email"/>
+							</label>
+
+							<label data-add-placeholder="" class="wide">
+								<input type="text"
+								name="phone"
+								placeholder="Phone"
+								data-constraints="@Phone"/>
+							</label>
+					
+							<label data-add-placeholder="" class="wide textarea">
+								<textarea
+								name="message"
+								placeholder="Message*"
+								data-constraints="@NotEmpty"></textarea>
+							</label>
+					
+							<div class="mfControls">
+								<button class="btn btn-primary btn-xl" type="submit">Send message</button>
+							</div>
+					
+							<div class="mfInfo"></div>
+						</fieldset>
+					</form>
+					<!-- END RD-Mailform -->
+
+			</div>
+		</section>
+
+		<section class="well-md well-md--inset-2 bg-primary">
+			<div class="container">
+				<div class="row flow-offset-2">
+
+					<div class="col-md-4">
+						<!-- Box -->
+						<div class='box box--mod-1'>
+							<div class='box_left'><div class="icon icon-md icon-secondary fa-map-marker"></div></div>
+							<!-- Contact Info -->
+							<div class='box_cnt contact-info'>
+								<dl><dt>Address:</dt><dd><address><a href="#">8901 Marmora Road, Glasgow, D04 89GR.</a></address></dd></dl>
+							</div>
+							<!-- END Contact Info -->
+						</div>
+						<!-- END Box -->
+					</div>
+
+					<div class="col-md-4">
+						<!-- Box -->
+						<div class='box box--mod-1'>
+							<div class='box_left'><div class="icon icon-md icon-secondary fa-phone"></div></div>
+							<!-- Contact Info -->
+							<div class='box_cnt contact-info'>
+								<dl><dt>Telephones:</dt><dd><a href="callto:#">+1 800 559 6580</a>, <a href="callto:#">+1 800 603 6035</a></dd></dl>
+							</div>
+							<!-- END Contact Info -->
+						</div>
+						<!-- END Box -->
+					</div>
+
+					<div class="col-md-4">
+						<!-- Box -->
+						<div class='box box--mod-1'>
+							<div class='box_left'><div class="icon icon-md icon-secondary fa-envelope"></div></div>
+							<!-- Contact Info -->
+							<div class='box_cnt contact-info'>
+								<dl><dt>E-mail:</dt><dd><a href="mailto:#"> mail@demolink.org</a></dd></dl>
+							</div>
+							<!-- END Contact Info -->
+						</div>
+						<!-- END Box -->
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+		<!-- Mapbox Map -->
+		<section class="map">
+		  <div id="google-map" class="map_model" data-y="40.721114" data-x="-73.884811"></div>
+		  <ul class="map_locations">
+		    <li data-y="29.7065219" data-x="-95.3609405">
+		      <p> 3738 Parkwood Dr Houston, TX 77021-1510. <span>919 360-9335</span></p>
+		    </li>
+		  </ul>
+		</section>
+		<!-- END Mapbox Map -->
+
+	</main>
+	{% include "public_pages/includes/footer.html" %}
+</div>
+
+{%include "public_pages/includes/scripts.html" %}
+<!--additional page specific scripts-->
+<script src='https://api.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.js'></script>
+<script src="{{ url_for('static', filename='public/js/lib/mailform/jquery.form.min.js') }}"></script>
+<script src="{{ url_for('static', filename='public/js/lib/mailform/jquery.rd-mailform.min.js') }}"></script>
+<script src="{{ url_for('static', filename='public/js/contact.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--main header content-->
+	{% include "public_pages/includes/headerContent.html" %}
+</head>
+<body>
+<div class="page">
+	<!--========================================================
+	                          HEADER
+	=========================================================-->
+	<header>
+        {% include "public_pages/includes/brand.html" %}
+
+		<section class="bg-image-1"></section>
+
+		{% include "public_pages/includes/nav.html" %}
+	</header>
+	<!--========================================================
+	                          CONTENT
+	=========================================================-->
+	<main>
+		<section class="well-md bg-secondary-1 text-center">
+			<div class="container">
+				<h2>Packages</h2>
+				<h4 class="text-left">This is the place to find the latest and greatest limited time deals on admission and lodging, as well as our best season-long waterpark packages. </h4>
+
+				<!-- Box -->
+				<div class='box box-clear box-md text-center text-md-left'>
+					<div class='box_left'><img src="{{ url_for('static', filename='public/images/page-03_img01.jpg') }}" alt=""></div>
+					<div class='box_cnt'>
+						<h3>Thanksgiving Package</h3>
+						<p class="text-left">Package includes:</p>
+						<!-- Marked List -->
+						<ul class="marked-list text-left">
+							<li><a href="#">Room accommodations</a></li>
+							<li><a href="#">Four water park passes (each additional pass is only $10)</a></li>
+						</ul>
+						<!-- END Marked List -->
+						<a href="#" class="btn btn-lg btn-primary">Book Now</a>
+					</div>
+				</div>
+				<!-- END Box -->
+
+				<!-- Box -->
+				<div class='box box-clear box-md text-center text-md-left'>
+					<div class='box_left'><img src="{{ url_for('static', filename='public/images/page-03_img02.jpg') }}" alt=""></div>
+					<div class='box_cnt'>
+						<h3>Shopping Package</h3>
+						<p class="text-left">Package includes:</p>
+						<!-- Marked List -->
+						<ul class="marked-list text-left">
+							<li><a href="#">Complimentary wireless Internet access</a></li>
+							<li><a href="#">Climate-controlled, heated underground parking </a></li>
+							<li><a href="#">Shuttle service to and from</a></li>
+							<li><a href="#">Complimentary luggage and shopping bag storage</a></li>
+						</ul>
+						<!-- END Marked List -->
+						<a href="#" class="btn btn-lg btn-primary">Book Now</a>
+					</div>
+				</div>
+				<!-- END Box -->
+
+				<!-- Box -->
+				<div class='box box-clear box-md text-center text-md-left'>
+					<div class='box_left'><img src="{{ url_for('static', filename='public/images/page-03_img03.jpg') }}" alt=""></div>
+					<div class='box_cnt'>
+						<h3>Water Park + Hotel Deals</h3>
+						<p class="text-left">Package includes:</p>
+						<!-- Marked List -->
+						<ul class="marked-list text-left">
+							<li><a href="#">Overnight accommodations in a spacious guest room</a></li>
+							<li><a href="#">Two to four passes to Water Park </a></li>
+							<li><a href="#">Convenient walk-up access to the park</a></li>
+						</ul>
+						<!-- END Marked List -->
+						<a href="#" class="btn btn-lg btn-primary">Book Now</a>
+					</div>
+				</div>
+				<!-- END Box -->
+
+				<!-- Box -->
+				<div class='box box-clear box-md text-center text-md-left'>
+					<div class='box_left'><img src="{{ url_for('static', filename='public/images/page-03_img04.jpg') }}" alt=""></div>
+					<div class='box_cnt'>
+						<h3>Slumber Party Deal</h3>
+						<p class="text-left">Package includes:</p>
+						<!-- Marked List -->
+						<ul class="marked-list text-left">
+							<li><a href="#">Overnight accommodations in a spacious guest room</a></li>
+							<li><a href="#">50 arcade tokens to Northern Lights Arcade for each day of your stay</a></li>
+							<li><a href="#">One large 1-topping pizza delivered hot and fresh to your room</a></li>
+							<li><a href="#">One in-room movie during your stay</a></li>
+						</ul>
+						<!-- END Marked List -->
+						<a href="#" class="btn btn-lg btn-primary">Book Now</a>
+					</div>
+				</div>
+				<!-- END Box -->
+
+			</div>
+		</section>
+
+		<section class="well-lg parallax text-center" data-url="{{ url_for('static', filename='public/images/parallax-1.jpg') }}"  data-mobile="true">
+      <div class="container">
+      	<h1>2016 Season Passes On Sale Now - Best Value for Fun!</h1>
+      </div>
+    </section>
+
+	</main>
+	{% include "public_pages/includes/footer.html" %}
+</div>
+
+{%include "public_pages/includes/scripts.html" %}
+</body>
+</html>
