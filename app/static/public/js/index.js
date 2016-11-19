@@ -16,18 +16,19 @@ $(document).ready(function() {
     })    
     
     //initialize mapbox map
+    var StartingLocation = [-95.3609405, 29.7065219];
     mapboxgl.accessToken = 'pk.eyJ1IjoicmlsZXltam9obnNvbiIsImEiOiJjaXY1bGptMzAwMWhtMnluNnd2bzk1cjBzIn0.FicxbRtge8W-_mxFb_Qk1A';
     var map = new mapboxgl.Map({
         container: 'google-map',
         style: 'mapbox://styles/mapbox/streets-v9',
-        center: [-83.51510, 43.02955],
+        center: StartingLocation,
         zoom: 15
     });
     
     //popup for showing more information
     var popup = new mapboxgl.Popup({closeOnClick: false, offset: [0, -64]})
-        .setLngLat([-83.51510, 43.02955])
-        .setHTML('<a href="/directions" style="color: black">Directions</a>')
+        .setLngLat(StartingLocation)
+        .setHTML('<a href="/directions" target="_blank" style="color: black">Directions</a>')
     
     // create a DOM element for the marker
         var el = document.createElement('div');
@@ -52,7 +53,7 @@ $(document).ready(function() {
 
         // add marker to map
         new mapboxgl.Marker(el, {offset: [-21, -64]}) //this offset centers the image properly
-            .setLngLat([-83.51510, 43.02955])
+            .setLngLat(StartingLocation)
             .addTo(map);
 
     //initialize countdown
