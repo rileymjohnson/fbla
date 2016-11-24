@@ -22,12 +22,12 @@
 <meta name="msapplication-TileImage" content="{{ url_for('static', filename='public/favicon/mstile-144x144.png') }}">
 <meta name="msapplication-config" content="{{ url_for('static', filename='public/favicon/browserconfig.xml') }}">
 <meta name="theme-color" content="#ffffff">
-<link href='{{ url_for("static", filename="public/css/lib/font-awesome.css") }}' rel='stylesheet'>
+<link href='{{ url_for("static", filename="public/lib/components-font-awesome/css/font-awesome.min.css") }}' rel='stylesheet'>
 <link href='//fonts.googleapis.com/css?family=Playball%7CComfortaa:400,300,700' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="{{ url_for("static", filename="public/css/lib/grid.css") }}">
 <link rel="stylesheet" href="{{ url_for("static", filename="public/css/style.css") }}">
-<script src="{{ url_for("static", filename="public/js/lib/jquery.js") }}"></script>
-<script src="{{ url_for("static", filename="public/js/lib/jquery-migrate-1.2.1.js") }}"></script> 
+<script src="{{ url_for("static", filename="public/lib/jquery/dist/jquery.min.js") }}"></script>
+<script src="{{ url_for("static", filename="public/lib/jquery-migrate/jquery-migrate.min.js") }}"></script> 
 <!--[if lt IE 9]> 
 <html class="lt-ie9">
    <div style=' clear: both; text-align:center; position: relative;'>
@@ -36,6 +36,6 @@
          alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."/>
       </a>
    </div>
-   <script src="{{ url_for("static", filename="public/js/lib/html5shiv.js") }}"></script>
+   <script src="{{ url_for("static", filename="public/lib/html5shiv/dist/html5shiv.min.js") }}"></script>
 <![endif]-->
-<script src='{{ url_for("static", filename="public/js/lib/device.min.js") }}'></script>
+<script src='{{ url_for("static", filename="public/lib/device.js/lib/device.min.js") }}'></script>
