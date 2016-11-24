@@ -100,7 +100,7 @@
 }
 
 .camera_loader {
-  background: #fff url(../../images/camera-loader.gif) no-repeat center;
+  background: #fff url(../images/camera-loader.gif) no-repeat center;
   border: 1px solid #ffffff;
   border-radius: 18px;
   height: 36px;

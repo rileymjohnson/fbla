@@ -11,7 +11,7 @@ function isIE() {
  ========================================================*/
 (function ($) {
 	if(isIE() && isIE() < 11){
-		include('/static/public/js/lib/pointer-events.js');
+		include('/static/public/js/pointer-events.js');
 		$('html').addClass('lt-ie11');
 		$(document).ready(function(){
 			PointerEventsPolyfill.initialize({});
@@ -25,7 +25,7 @@ function isIE() {
 (function ($) {
 	var o = $('html');
 	if (o.hasClass('desktop')) {
-		include('/static/public/js/lib/tmstickup.js');
+		include('/static/public/js/tmstickup.js');
 
 		$(document).ready(function () {
 			$('#stuck_container').TMStickUp({})
@@ -39,7 +39,7 @@ function isIE() {
 (function ($) {
 	var o = $('html');
 	if (o.hasClass('desktop')) {
-		include('/static/public/js/lib/jquery.ui.totop.js');
+		include('/static/public/js/jquery.ui.totop.js');
 
 		$(document).ready(function () {
 			$().UItoTop({
@@ -56,7 +56,7 @@ function isIE() {
 (function ($) {
 	var o = $('[data-equal-group]');
 	if (o.length > 0) {
-		include('/static/public/js/lib/jquery.equalheights.js');
+		include('/static/public/js/jquery.equalheights.js');
 	}
 })(jQuery); 
 
@@ -68,7 +68,7 @@ function isIE() {
 
 	if ((navigator.userAgent.toLowerCase().indexOf('msie') == -1 ) || (isIE() && isIE() > 9)) {
 		if (o.hasClass('desktop')) {
-			include('/static/public/js/lib/wow.js');
+			include('/static/public/js/wow.js');
 
 			$(document).ready(function () {
 				new WOW().init();
@@ -131,7 +131,7 @@ document.write('<meta name="viewport" content="width=device-width,initial-scale=
 var o = $('#camera');
 	if (o.length > 0) {
 		if (!(isIE() && (isIE() > 9))) {
-			include('/static/public/js/lib/jquery.mobile.customized.min.js');
+			include('/static/public/js/jquery.mobile.customized.min.js');
 		}
 	}
 })(jQuery);

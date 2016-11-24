@@ -5,8 +5,8 @@
 	{% include "public_pages/includes/headerContent.html" %}
     <!--additional page specific styles-->
     <link href='https://api.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.css' rel='stylesheet' />
-    <link rel="stylesheet" href="{{ url_for('static', filename='public/css/lib/map.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='public/css/lib/rd-mailform.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='public/css/map.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='public/css/rd-mailform.css') }}">
 </head>
 <body>
 <div class="page">
@@ -138,8 +138,8 @@
 {%include "public_pages/includes/scripts.html" %}
 <!--additional page specific scripts-->
 <script src='https://api.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.js'></script>
-<script src="{{ url_for('static', filename='public/js/lib/mailform/jquery.form.min.js') }}"></script>
-<script src="{{ url_for('static', filename='public/js/lib/mailform/jquery.rd-mailform.min.js') }}"></script>
+<script src="{{ url_for('static', filename='public/lib/jquery-form/jquery.form.js') }}"></script>
+<script src="{{ url_for('static', filename='public/js/jquery.rd-mailform.min.js') }}"></script>
 <script src="{{ url_for('static', filename='public/js/contact.js') }}"></script>
 </body>
 </html>
