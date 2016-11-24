@@ -58,9 +58,11 @@ $(document).ready(function() {
     // toggle small or large menu
     $MENU_TOGGLE.on('click', function() {
         if ($BODY.hasClass('nav-md')) {
+            $("#pageIcon").css("margin-left", "6px")
             $SIDEBAR_MENU.find('li.active ul').hide();
             $SIDEBAR_MENU.find('li.active').addClass('active-sm').removeClass('active');
         } else {
+            $("#pageIcon").css("margin-left", "0px")
             $SIDEBAR_MENU.find('li.active-sm ul').show();
             $SIDEBAR_MENU.find('li.active-sm').addClass('active').removeClass('active-sm');
         }

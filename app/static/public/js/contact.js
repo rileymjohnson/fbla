@@ -61,7 +61,7 @@ $(document).ready(function() {
     //popup for showing more information
     var popup = new mapboxgl.Popup({closeOnClick: false, offset: [0, -64]})
         .setLngLat(StartingLocation)
-        .setHTML('<a href="/directions" target="_blank" style="color: black">Directions</a>')
+        .setHTML('<a href="/directions" target="_blank" style="color: #0000EE; text-decoration: underline">3738 Parkwood Dr, Houston, Texas 77021, United States</a>')
     
     // create a DOM element for the marker
         var el = document.createElement('div');
