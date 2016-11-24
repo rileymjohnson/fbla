@@ -1,0 +1,33 @@
+{
+  "name": "chhs-fbla-2017",
+  "version": "1.0.0",
+  "description": "CHHS FBLA webdesign competition",
+  "scripts": {
+    "install-public": "cd app/public && bower install",
+    "install-admin": "cd app/admin && bower install",
+    "install-bower": "npm run install-public && npm run install-admin",
+    "build": "npm install && npm run install-bower"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rileymjohnson/fbla"
+  },
+  "keywords": [
+    "fbla",
+    "python",
+    "css",
+    "js",
+    "html",
+    "template",
+    "admin",
+    "bootstrap",
+    "theme",
+    "backend",
+    "responsive"
+  ],
+  "author": "Riley Johnson",
+  "license": "MIT",
+  "devDependencies": {
+    "bower": "^1.8.0"
+  }
+}

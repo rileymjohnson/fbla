@@ -57,3 +57,10 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# bower components
+app/static/public/lib
+app/static/admin/lib
+
+#npm modules
+node_modules/
