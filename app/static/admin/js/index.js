@@ -1,244 +1,193 @@
-//flot
-$(document).ready(function() {
-    var data1 = [
-        [gd(2012, 1, 1), 17],
-        [gd(2012, 1, 2), 74],
-        [gd(2012, 1, 3), 6],
-        [gd(2012, 1, 4), 39],
-        [gd(2012, 1, 5), 20],
-        [gd(2012, 1, 6), 85],
-        [gd(2012, 1, 7), 7]
-    ];
+Chart.defaults.global.legend = {
+    enabled: false
+};
 
-    var data2 = [
-        [gd(2012, 1, 1), 82],
-        [gd(2012, 1, 2), 23],
-        [gd(2012, 1, 3), 66],
-        [gd(2012, 1, 4), 9],
-        [gd(2012, 1, 5), 119],
-        [gd(2012, 1, 6), 6],
-        [gd(2012, 1, 7), 9]
-    ];
-    $("#canvas_dahs").length && $.plot($("#canvas_dahs"), [
-        data1, data2
-    ], {
-        series: {
-            lines: {
-                show: false,
-                fill: true
-            },
-            splines: {
-                show: true,
-                tension: 0.4,
-                lineWidth: 1,
-                fill: 0.4
-            },
-            points: {
-                radius: 0,
-                show: true
-            },
-            shadowSize: 2
-        },
-        grid: {
-            verticalLines: true,
-            hoverable: true,
-            clickable: true,
-            tickColor: "#d5d5d5",
-            borderWidth: 1,
-            color: '#fff'
-        },
-        colors: ["rgba(38, 185, 154, 0.38)", "rgba(3, 88, 106, 0.38)"],
-        xaxis: {
-            tickColor: "rgba(51, 51, 51, 0.06)",
-            mode: "time",
-            tickSize: [1, "day"],
-            //tickLength: 10,
-            axisLabel: "Date",
-            axisLabelUseCanvas: true,
-            axisLabelFontSizePixels: 12,
-            axisLabelFontFamily: 'Verdana, Arial',
-            axisLabelPadding: 10
-        },
-        yaxis: {
-            ticks: 8,
-            tickColor: "rgba(51, 51, 51, 0.06)",
-        },
-        tooltip: false
-    });
+// Line chart
+var ctx = document.getElementById("lineChart");
+var lineChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        datasets: [{
+            label: "My First dataset",
+            backgroundColor: "rgba(38, 185, 154, 0.31)",
+            borderColor: "rgba(38, 185, 154, 0.7)",
+            pointBorderColor: "rgba(38, 185, 154, 0.7)",
+            pointBackgroundColor: "rgba(38, 185, 154, 0.7)",
+            pointHoverBackgroundColor: "#fff",
+            pointHoverBorderColor: "rgba(220,220,220,1)",
+            pointBorderWidth: 1,
+            data: [31, 74, 6, 39, 20, 85, 7]
+        }, {
+            label: "My Second dataset",
+            backgroundColor: "rgba(3, 88, 106, 0.3)",
+            borderColor: "rgba(3, 88, 106, 0.70)",
+            pointBorderColor: "rgba(3, 88, 106, 0.70)",
+            pointBackgroundColor: "rgba(3, 88, 106, 0.70)",
+            pointHoverBackgroundColor: "#fff",
+            pointHoverBorderColor: "rgba(151,187,205,1)",
+            pointBorderWidth: 1,
+            data: [82, 23, 66, 9, 99, 4, 2]
+        }]
+    },
+});
 
-    function gd(year, month, day) {
-        return new Date(year, month - 1, day).getTime();
+// Bar chart
+var ctx = document.getElementById("mybarChart");
+var mybarChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        datasets: [{
+            label: '# of Votes',
+            backgroundColor: "#26B99A",
+            data: [51, 30, 40, 28, 92, 50, 45]
+        }, {
+            label: '# of Votes',
+            backgroundColor: "#03586A",
+            data: [41, 56, 25, 48, 72, 34, 12]
+        }]
+    },
+
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
     }
 });
 
-//jVector map
-$(document).ready(function() {
-    $('#world-map-gdp').vectorMap({
-        map: 'world_mill_en',
-        backgroundColor: 'transparent',
-        zoomOnScroll: false,
-        series: {
-            regions: [{
-                values: gdpData,
-                scale: ['#E6F2F0', '#149B7E'],
-                normalizeFunction: 'polynomial'
-            }]
-        },
-        onRegionTipShow: function(e, el, code) {
-            el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
-        }
-    });
-});
-
-//skycons
-$(document).ready(function() {
-    var icons = new Skycons({
-            "color": "#73879C"
-        }),
-        list = [
-            "clear-day", "clear-night", "partly-cloudy-day",
-            "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
-            "fog"
+// Doughnut chart
+var ctx = document.getElementById("canvasDoughnut");
+var data = {
+    labels: [
+        "Dark Grey",
+        "Purple Color",
+        "Gray Color",
+        "Green Color",
+        "Blue Color"
+    ],
+    datasets: [{
+        data: [120, 50, 140, 180, 100],
+        backgroundColor: [
+            "#455C73",
+            "#9B59B6",
+            "#BDC3C7",
+            "#26B99A",
+            "#3498DB"
         ],
-        i;
+        hoverBackgroundColor: [
+            "#34495E",
+            "#B370CF",
+            "#CFD4D8",
+            "#36CAAB",
+            "#49A9EA"
+        ]
 
-    for (i = list.length; i--;)
-        icons.set(list[i], list[i]);
-
-    icons.play();
-});
-
-//doughnut chart
-$(document).ready(function() {
-    var options = {
-        legend: false,
-        responsive: false
-    };
-
-    new Chart(document.getElementById("canvas1"), {
-        type: 'doughnut',
-        tooltipFillColor: "rgba(51, 51, 51, 0.55)",
-        data: {
-            labels: [
-                "Symbian",
-                "Blackberry",
-                "Other",
-                "Android",
-                "IOS"
-            ],
-            datasets: [{
-                data: [15, 20, 30, 10, 30],
-                backgroundColor: [
-                    "#BDC3C7",
-                    "#9B59B6",
-                    "#E74C3C",
-                    "#26B99A",
-                    "#3498DB"
-                ],
-                hoverBackgroundColor: [
-                    "#CFD4D8",
-                    "#B370CF",
-                    "#E95E4F",
-                    "#36CAAB",
-                    "#49A9EA"
-                ]
-            }]
-        },
-        options: options
-    });
-});
-
-//bootstrap date range picker
-$(document).ready(function() {
-
-    var cb = function(start, end, label) {
-        console.log(start.toISOString(), end.toISOString(), label);
-        $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-    };
-
-    var optionSet1 = {
-        startDate: moment().subtract(29, 'days'),
-        endDate: moment(),
-        minDate: '01/01/2012',
-        maxDate: '12/31/2015',
-        dateLimit: {
-            days: 60
-        },
-        showDropdowns: true,
-        showWeekNumbers: true,
-        timePicker: false,
-        timePickerIncrement: 1,
-        timePicker12Hour: true,
-        ranges: {
-            'Today': [moment(), moment()],
-            'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-            'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-            'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-            'This Month': [moment().startOf('month'), moment().endOf('month')],
-            'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-        },
-        opens: 'left',
-        buttonClasses: ['btn btn-default'],
-        applyClass: 'btn-small btn-primary',
-        cancelClass: 'btn-small',
-        format: 'MM/DD/YYYY',
-        separator: ' to ',
-        locale: {
-            applyLabel: 'Submit',
-            cancelLabel: 'Clear',
-            fromLabel: 'From',
-            toLabel: 'To',
-            customRangeLabel: 'Custom',
-            daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
-            monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-            firstDay: 1
-        }
-    };
-    $('#reportrange span').html(moment().subtract(29, 'days').format('MMMM D, YYYY') + ' - ' + moment().format('MMMM D, YYYY'));
-    $('#reportrange').daterangepicker(optionSet1, cb);
-    $('#reportrange').on('show.daterangepicker', function() {
-        console.log("show event fired");
-    });
-    $('#reportrange').on('hide.daterangepicker', function() {
-        console.log("hide event fired");
-    });
-    $('#reportrange').on('apply.daterangepicker', function(ev, picker) {
-        console.log("apply event fired, start/end dates are " + picker.startDate.format('MMMM D, YYYY') + " to " + picker.endDate.format('MMMM D, YYYY'));
-    });
-    $('#reportrange').on('cancel.daterangepicker', function(ev, picker) {
-        console.log("cancel event fired");
-    });
-    $('#options1').click(function() {
-        $('#reportrange').data('daterangepicker').setOptions(optionSet1, cb);
-    });
-    $('#options2').click(function() {
-        $('#reportrange').data('daterangepicker').setOptions(optionSet2, cb);
-    });
-    $('#destroy').click(function() {
-        $('#reportrange').data('daterangepicker').remove();
-    });
-});
-
-//gaugejs
-var opts = {
-    lines: 12,
-    angle: 0,
-    lineWidth: 0.4,
-    pointer: {
-        length: 0.75,
-        strokeWidth: 0.042,
-        color: '#1D212A'
-    },
-    limitMax: 'false',
-    colorStart: '#1ABC9C',
-    colorStop: '#1ABC9C',
-    strokeColor: '#F0F3F3',
-    generateGradient: true
+    }]
 };
-var target = document.getElementById('foo'),
-    gauge = new Gauge(target).setOptions(opts);
 
-gauge.maxValue = 6000;
-gauge.animationSpeed = 32;
-gauge.set(3200);
-gauge.setTextField(document.getElementById("gauge-text"));
+var canvasDoughnut = new Chart(ctx, {
+    type: 'doughnut',
+    tooltipFillColor: "rgba(51, 51, 51, 0.55)",
+    data: data
+});
+
+// Radar chart
+var ctx = document.getElementById("canvasRadar");
+var data = {
+    labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
+    datasets: [{
+        label: "My First dataset",
+        backgroundColor: "rgba(3, 88, 106, 0.2)",
+        borderColor: "rgba(3, 88, 106, 0.80)",
+        pointBorderColor: "rgba(3, 88, 106, 0.80)",
+        pointBackgroundColor: "rgba(3, 88, 106, 0.80)",
+        pointHoverBackgroundColor: "#fff",
+        pointHoverBorderColor: "rgba(220,220,220,1)",
+        data: [65, 59, 90, 81, 56, 55, 40]
+    }, {
+        label: "My Second dataset",
+        backgroundColor: "rgba(38, 185, 154, 0.2)",
+        borderColor: "rgba(38, 185, 154, 0.85)",
+        pointColor: "rgba(38, 185, 154, 0.85)",
+        pointStrokeColor: "#fff",
+        pointHighlightFill: "#fff",
+        pointHighlightStroke: "rgba(151,187,205,1)",
+        data: [28, 48, 40, 19, 96, 27, 100]
+    }]
+};
+
+var canvasRadar = new Chart(ctx, {
+    type: 'radar',
+    data: data,
+});
+
+// Pie chart
+var ctx = document.getElementById("pieChart");
+var data = {
+    datasets: [{
+        data: [120, 50, 140, 180, 100],
+        backgroundColor: [
+            "#455C73",
+            "#9B59B6",
+            "#BDC3C7",
+            "#26B99A",
+            "#3498DB"
+        ],
+        label: 'My dataset' // for legend
+    }],
+    labels: [
+        "Dark Gray",
+        "Purple",
+        "Gray",
+        "Green",
+        "Blue"
+    ]
+};
+
+var pieChart = new Chart(ctx, {
+    data: data,
+    type: 'pie',
+    otpions: {
+        legend: false
+    }
+});
+
+// PolarArea chart
+var ctx = document.getElementById("polarArea");
+var data = {
+    datasets: [{
+        data: [120, 50, 140, 180, 100],
+        backgroundColor: [
+            "#455C73",
+            "#9B59B6",
+            "#BDC3C7",
+            "#26B99A",
+            "#3498DB"
+        ],
+        label: 'My dataset'
+    }],
+    labels: [
+        "Dark Gray",
+        "Purple",
+        "Gray",
+        "Green",
+        "Blue"
+    ]
+};
+
+var polarArea = new Chart(ctx, {
+    data: data,
+    type: 'polarArea',
+    options: {
+        scale: {
+            ticks: {
+                beginAtZero: true
+            }
+        }
+    }
+});
