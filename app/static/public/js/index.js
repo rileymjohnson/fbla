@@ -55,12 +55,4 @@ $(document).ready(function() {
         new mapboxgl.Marker(el, {offset: [-21, -64]}) //this offset centers the image properly
             .setLngLat(StartingLocation)
             .addTo(map);
-
-    //initialize countdown
-    var countdownDate = new Date(2016, 12 - 1, 25);
-    $('#defaultCountdown').countdown({
-        until: countdownDate,
-        format: 'DHMS'
-    });
-    $('#year').text(countdownDate.getFullYear());
 });

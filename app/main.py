@@ -6,6 +6,12 @@ from . import public, admin
 from .extensions import *
 from .config import Config
 
+def formatHours(hour):
+    if hour <= 12:
+        return str(hour) + "A.M."
+    else:
+        return str(hour - 12) + "P.M."
+
 #creates and returna a flask app instance
 def create_app(config_object=Config):
     app = Flask(__name__)
@@ -30,7 +36,6 @@ def register_extensions(app):
     bcrypt.init_app(app)
     cache.init_app(app)
     db.init_app(app)
-    csrf_protect.init_app(app)
     login_manager.init_app(app)
     debug_toolbar.init_app(app)
     migrate.init_app(app, db)
@@ -49,6 +54,7 @@ def register_jinja_extensions(app):
         now = datetime.datetime.now()
         return now.year
     app.jinja_env.filters['currentYear'] = get_year #creates a filter that returns the current year
+    app.jinja_env.globals.update(formatHours=formatHours)
     return None
 
 #register error handlers

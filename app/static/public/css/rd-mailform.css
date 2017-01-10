@@ -30,15 +30,14 @@
 .rd-mailform label:first-child {
   margin-top: 0;
 }
-.rd-mailform label input, .rd-mailform label select {
+.rd-mailform input, .rd-mailform select {
   height: 65px;
 }
-.rd-mailform label input, .rd-mailform label select, .rd-mailform label textarea {
+.rd-mailform input, .rd-mailform select, .rd-mailform textarea {
   display: block;
   width: 100%;
   margin: 0;
   -webkit-appearance: none;
-  font-family: "Comfortaa", sans-serif;
   font-size: 14px;
   font-weight: 400;
   padding: 15px 0;
@@ -50,35 +49,34 @@
   border-style: none none solid none;
   border-radius: 0;
 }
-.rd-mailform label input:-moz-placeholder, .rd-mailform label select:-moz-placeholder, .rd-mailform label textarea:-moz-placeholder {
+.rd-mailform input:-moz-placeholder, .rd-mailform label select:-moz-placeholder, .rd-mailform textarea:-moz-placeholder {
   color: #3e3e3e;
   opacity: 1;
 }
-.rd-mailform label input::-webkit-input-placeholder, .rd-mailform label select::-webkit-input-placeholder, .rd-mailform label textarea::-webkit-input-placeholder {
+.rd-mailform input::-webkit-input-placeholder, .rd-mailform label select::-webkit-input-placeholder, .rd-mailform textarea::-webkit-input-placeholder {
   color: #3e3e3e;
   opacity: 1;
 }
-.rd-mailform label input::-moz-placeholder, .rd-mailform label select::-moz-placeholder, .rd-mailform label textarea::-moz-placeholder {
+.rd-mailform input::-moz-placeholder, .rd-mailform label select::-moz-placeholder, .rd-mailform textarea::-moz-placeholder {
   color: #3e3e3e;
   opacity: 1;
 }
-.rd-mailform label input:-ms-input-placeholder, .rd-mailform label select:-ms-input-placeholder, .rd-mailform label textarea:-ms-input-placeholder {
+.rd-mailform input:-ms-input-placeholder, .rd-mailform label select:-ms-input-placeholder, .rd-mailform textarea:-ms-input-placeholder {
   color: #3e3e3e;
   opacity: 1;
 }
-.rd-mailform label textarea {
+.rd-mailform textarea {
   resize: none;
   overflow: auto;
   min-height: 65px;
   height: 165px;
   max-height: 247.5px;
-  font-family: "Comfortaa", sans-serif;
   -moz-transition: 0.2s ease-in;
   -o-transition: 0.2s ease-in;
   -webkit-transition: 0.2s ease-in;
   transition: 0.2s ease-in;
 }
-.rd-mailform label textarea:focus {
+.rd-mailform textarea:focus {
   outline: none;
 }
 .rd-mailform label.wide {
@@ -109,8 +107,17 @@
   text-align: right;
 }
 .mfControls button {
-  margin-top: 38px;
-  font-family: "Comfortaa", sans-serif;
+  margin-top: 10px;
+}
+
+.cancel-button {
+  margin-top: 10px;
+  margin-right: 10px;
+  border-width: 2px !important;
+}
+
+.changing-price {
+  margin-top: 10px;
 }
 
 @-ms-keyframes fout {
@@ -1600,3 +1607,24 @@
 }
 
 /*# sourceMappingURL=rd-mailform.css.map */
+
+textarea::-webkit-input-placeholder, input::-webkit-input-placeholder {
+  font-family: 'Aladin', cursive;
+}
+
+textarea:-ms-input-placeholder, input:-ms-input-placeholder {
+  font-family: 'Aladin', cursive;
+}
+
+textarea:-moz-placeholder, input:-moz-placeholder {
+  font-family: 'Aladin', cursive;
+}
+
+textarea::-moz-placeholder, input::-moz-placeholder {
+  font-family: 'Aladin', cursive;
+}
+
+.form-label {
+  color: #3e3e3e;
+  font-size: 14px;
+}

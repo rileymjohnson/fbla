@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="{{ url_for("static", filename="public/css/camera.css") }}">
 	<link rel="stylesheet" href="{{ url_for("static", filename="public/css/map.css") }}">
 	<link rel="stylesheet" href="{{ url_for("static", filename="public/css/countdown.css") }}">
+	<link rel="stylesheet" href="{{ url_for("static", filename="public/css/slick.css") }}">
+	<link rel="stylesheet" href="{{ url_for("static", filename="public/css/slick-theme.css") }}">
 </head>
 <body>
 <div class="page">
@@ -19,24 +21,11 @@
 
 		<section>
 			<!-- Camera -->
-			<div class="camera_container">
-			  <div id="camera" class="camera_wrap">
-			    <div data-src="/static/public/images/camera-1.jpg">
-			      <div class="camera_caption fadeIn">
-			      	<div class="container"><span>We offer premier holiday attractions</span></div>
-			      </div>
-			    </div>
-			    <div data-src="/static/public/images/camera-2.jpg">
-			      <div class="camera_caption fadeIn">
-			      	<div class="container"><span>Tube rides, body slides, and wave pools with heated water</span></div>
-			      </div>
-			    </div>
-			    <div data-src="/static/public/images/camera-3.jpg">
-			      <div class="camera_caption fadeIn">
-			      	<div class="container"><span>An exciting variety of water rides and slides</span></div>
-			      </div>
-			    </div>
-			  </div>
+			<div class="your-class">
+			    <div><div class="bg-image-carousel" style="background-image: url(/static/public/images/camera-1.png)"></div></div>
+			    <div><div class="bg-image-carousel" style="background-image: url(/static/public/images/camera-2.png)"></div></div>
+			    <div><div class="bg-image-carousel" style="background-image: url(/static/public/images/camera-3.png)"></div></div>
+			    <div><div class="bg-image-carousel" style="background-image: url(/static/public/images/camera-4.png)"></div></div>
 			</div>
 			<!-- END Camera -->
 		</section>
@@ -47,92 +36,150 @@
 	                          CONTENT
 	=========================================================-->
 	<main>
-		<section class="well-sm bg-secondary-1 text-center">
-			<div class="container">
-				<h1 class="upper">Christmas begins in</h1>
-				<div id="defaultCountdown"></div>
-			</div>
-		</section>
 
-		<section class="well-md well-md--inset-1 bg-secondary-2 text-center">
-			<div class="container">
-				<div class="row flow-offset-1">
-
-					<div class="col-sm-6 col-md-3">
-						<img class="circle" src="/static/public/images/page-01_img01.jpg" alt="">
-						<h3>Birthday parties</h3>
-						<p>Water Park of America is known far and wide as the hottest place to host your kid's birthday party.</p>
-						<a href="#" class="btn btn-primary btn-md">More</a>
+		<section class="well-md well-md--inset-1 bg-secondary-1 text-center">
+			<div class="container-partial-fluid">
+				<h2>Now Open!</h2>
+				<div class="fluid-row offset-4 flow-offset-2 text-center text-sm-left">
+					
+					<div class="col-sm-12 col-md-4 text-center">
+						<img src="{{ url_for('static', filename='public/images/home-1.jpg') }}" alt="" class="square">
 					</div>
 
-					<div class="col-sm-6 col-md-3">
-						<img class="circle" src="/static/public/images/page-01_img02.jpg" alt="">
-						<h3>Group <br class="hided">info</h3>
-						<p>Vanilla is the perfect summer destination to host your group. Our staff is happy to handle all the details.</p>
-						<a href="#" class="btn btn-primary btn-md">More</a>
+					<div class="col-sm-12 col-md-4 text-center">
+						<img src="{{ url_for('static', filename='public/images/home-2.jpg') }}" alt="" class="square">
 					</div>
 
-					<div class="col-sm-6 col-md-3">
-						<img class="circle" src="/static/public/images/page-01_img03.jpg" alt="">
-						<h3>Gift <br class="hided">cards</h3>
-						<p>A Vanilla gift card can be redeemed anywhere in the park including admission.</p>
-						<a href="#" class="btn btn-primary btn-md">More</a>
-					</div>
-
-					<div class="col-sm-6 col-md-3">
-						<img class="circle" src="/static/public/images/page-01_img04.jpg" alt="">
-						<h3>Specials & events</h3>
-						<p>Keep up to date on our schedule of in-park events as well as our social media contests!</p>
-						<a href="#" class="btn btn-primary btn-md">More</a>
+					<div class="col-sm-12 col-md-4 text-center">
+						<img src="{{ url_for('static', filename='public/images/home-3.jpg') }}" alt="" class="square">
 					</div>
 
 				</div>
 			</div>
 		</section>
 
-		<section class="well-md well-md--inset-2 text-center">
-			<div class="container">
-				<h2>Real Sand. Real Surf. Real Fun!</h2>
-				<h6>We specialize in company picnics, family reunions, birthday parties and outings for a variety of clubs and organizations including church groups, school groups, karate schools.</h6>
-				<div class="col-md-offset-1 col-md-10 video">
-					<iframe src="//player.vimeo.com/video/68771187?wmode=transparent" allowfullscreen></iframe>
-				</div>
+		<section class="well-md well-md--inset-2 text-center bg-secondary-2">
+			<div class="container-partial-fluid">
+				<h2>Welcome!</h2>
+				<h6 class="black">Welcome to Five Stars Family Entertainment Center! We are an amusement park local to Houston, Texas that is geared towards great fun for the whole family. We guarantee a wonderful time for customers of all ages! Spend a day winning fantastic prizes in our world class arcade, go for a thrilling ride on one of our exciting roller coasters, or relax in our exotic Five Star Lounge. We’re all about your enjoyment here at Five Stars, and every one of our employees is hand picked to help you have the best time you can. The fun never stops at Five Stars, and we can’t wait for you to stop by and have the time of your life!</h6>
 			</div>
 		</section>
 
 		<section class="bg-primary well-md well-md--inset-2 text-center">
-			<div class="container">
-				<h2>Upcoming events</h2>
+			<div class="container-partial-fluid">
+				<h2>Upcoming Events</h2>
 				<div class="row offset-1 flow-offset-1">
 
 					<div class="col-md-4">
 						<div class="event-post text-left">
-							<p class="meta"><span>09</span>august/2015</p>
-							<h4>Homeschool<br>day</h4>
-							<p>Are you a homeschool student, parent or teacher? Join us for a day of fun for only $9.95. Just purchase your tickets on June 2nd at the ticketbooth and mention "Homeschool" to receive your discount!</p>
-							<a href="#" class="btn btn-primary btn-md">More</a>
+							<p class="meta"><span>20</span>may/2017</p>
+							<h4>Field<br>day</h4>
+							<p>Want to take a break from thrill seeking? Come to our huge outdoor field day event where kids and adults can relax and have a wonderful time playing outdoor games and activites! A free drink comes with each ticket to keep you refreshed while you're out on the field!</p>
 						</div>
 					</div>
 
 					<div class="col-md-4">
 						<div class="event-post text-left">
-							<p class="meta"><span>12</span>august/2015</p>
-							<h4>Friday night <br>splash</h4>
-							<p>Join us for a special ticketed event. The Vanilla will be open extended hours from 4pm till 8pm. Admission tickets are $7.95 per person (or a $3.00 upgrade with the same day regular park admission ticket).</p>
-							<a href="#" class="btn btn-primary btn-md">More</a>
+							<p class="meta"><span>03</span>june/2017</p>
+							<h4>Thrill and<br>Chill</h4>
+							<p>Enjoy an amazing day of rollarcoasters and thrilling rides with an evening of popcorn, drinks, and a movie. All tickets come with a free popcorn and soda pass along with an outdoor movie!</p>
 						</div>
 					</div>
 
 					<div class="col-md-4">
 						<div class="event-post text-left">
-							<p class="meta"><span>21</span>august/2015</p>
-							<h4>Father's day <br>celebration</h4>
-							<p>Celebrate Fathers with us! Father's are in FREE with a paid child's ticket. Mention code: DAD DAY at the ticketbooth on Sunday, June 21 for the discount with purchase!</p>
-							<a href="#" class="btn btn-primary btn-md">More</a>
+							<p class="meta"><span>04</span>june/2017</p>
+							<h4>Patriot's<br>day</h4>
+							<p>USA themed attractions with a cozy night of fireworks. Patriots Day comes with an amazing discount of 10% off tickets and snacks. Be sure to come and represent America!</p>
 						</div>
 					</div>
 
 				</div>
+			</div>
+		</section>
+        
+        <section class="well-md well-md--inset-2 text-center hours">
+			<div class="container-partial-fluid">
+				<h2>Hours</h2>
+				<ul class="marked-list text-left">
+					<li>
+						<div>
+							<h6>Monday</h6>
+                            {% if hours[0]["open"] == 1 %}
+							<h6 class="time">{{ formatHours(hours[0]["start"]) }} - {{ formatHours(hours[0]["end"]) }}</h6>
+                            {% else %}
+                            <h6 class="time">CLOSED</h6>
+                            {% endif %}
+							<br />
+						</div>
+					</li>
+                    <li>
+						<div>
+							<h6>Tuesday</h6>
+							{% if hours[1]["open"] == 1 %}
+							<h6 class="time">{{ formatHours(hours[1]["start"]) }} - {{ formatHours(hours[1]["end"]) }}</h6>
+                            {% else %}
+                            <h6 class="time">CLOSED</h6>
+                            {% endif %}
+							<br />
+						</div>
+					</li>
+                    <li>
+						<div>
+							<h6>Wednesday</h6>
+							{% if hours[2]["open"] == 1 %}
+							<h6 class="time">{{ formatHours(hours[2]["start"]) }} - {{ formatHours(hours[2]["end"]) }}</h6>
+                            {% else %}
+                            <h6 class="time">CLOSED</h6>
+                            {% endif %}
+							<br />
+						</div>
+					</li>
+                    <li>
+						<div>
+							<h6>Thursday</h6>
+							{% if hours[3]["open"] == 1 %}
+							<h6 class="time">{{ formatHours(hours[3]["start"]) }} - {{ formatHours(hours[3]["end"]) }}</h6>
+                            {% else %}
+                            <h6 class="time">CLOSED</h6>
+                            {% endif %}
+							<br />
+						</div>
+					</li>
+                    <li>
+						<div>
+							<h6>Friday</h6>
+							{% if hours[4]["open"] == 1 %}
+							<h6 class="time">{{ formatHours(hours[4]["start"]) }} - {{ formatHours(hours[4]["end"]) }}</h6>
+                            {% else %}
+                            <h6 class="time">CLOSED</h6>
+                            {% endif %}
+							<br />
+						</div>
+					</li>
+                    <li>
+						<div>
+							<h6>Saturday</h6>
+							{% if hours[5]["open"] == 1 %}
+							<h6 class="time">{{ formatHours(hours[5]["start"]) }} - {{ formatHours(hours[5]["end"]) }}</h6>
+                            {% else %}
+                            <h6 class="time">CLOSED</h6>
+                            {% endif %}
+							<br />
+						</div>
+					</li>
+                    <li>
+						<div>
+							<h6>Sunday</h6>
+							{% if hours[6]["open"] == 1 %}
+							<h6 class="time">{{ formatHours(hours[6]["start"]) }} - {{ formatHours(hours[6]["end"]) }}</h6>
+                            {% else %}
+                            <h6 class="time">CLOSED</h6>
+                            {% endif %}
+							<br />
+						</div>
+					</li>
+				</ul>
 			</div>
 		</section>
 
@@ -152,6 +199,20 @@
 
 {%include "public_pages/includes/scripts.html" %}
 <script src='https://api.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.js'></script>
+<script src="{{ url_for("static", filename="public/js/slick.js") }}"></script>
 <script src="{{ url_for("static", filename="public/js/index.js") }}"></script>
+<script>
+	$(document).ready(function(){
+      $('.your-class').slick({
+     	arrows: true,
+     	slidesToShow: 1,
+		slidesToScroll: 1,
+		autoplay: true,
+		autoplaySpeed: 7000,
+		//prevArrow:"<img class='a-left control-c prev slick-prev' src='../images/shoe_story/arrow-left.png'>",
+    	//nextArrow:"<img class='a-right control-c next slick-next' src='../images/shoe_story/arrow-right.png'>"
+      });
+    });
+</script>
 </body>
 </html>

@@ -1,116 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!--main header content-->
-	{% include "public_pages/includes/headerContent.html" %}
+    {% include "public_pages/includes/headerContent.html" %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='public/css/rd-mailform.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='public/css/classic.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='public/css/classic.date.css') }}">
 </head>
+
 <body>
-<div class="page">
-	<!--========================================================
+    <div class="page">
+        <!--========================================================
 	                          HEADER
 	=========================================================-->
-	<header>
-        {% include "public_pages/includes/brand.html" %}
-
-		<section class="bg-image-1"></section>
-
-		{% include "public_pages/includes/nav.html" %}
-	</header>
-	<!--========================================================
+        <header>
+            {% include "public_pages/includes/brand.html" %}
+            <section class="bg-image-1"></section>
+            {% include "public_pages/includes/nav.html" %}
+        </header>
+        <!--========================================================
 	                          CONTENT
 	=========================================================-->
-	<main>
-		<section class="well-md bg-secondary-1 text-center">
-			<div class="container">
-				<h2>Packages</h2>
-				<h4 class="text-left">This is the place to find the latest and greatest limited time deals on admission and lodging, as well as our best season-long waterpark packages. </h4>
+        <main>
 
-				<!-- Box -->
-				<div class='box box-clear box-md text-center text-md-left'>
-					<div class='box_left'><img src="{{ url_for('static', filename='public/images/page-03_img01.jpg') }}" alt=""></div>
-					<div class='box_cnt'>
-						<h3>Thanksgiving Package</h3>
-						<p class="text-left">Package includes:</p>
-						<!-- Marked List -->
-						<ul class="marked-list text-left">
-							<li><a href="#">Room accommodations</a></li>
-							<li><a href="#">Four water park passes (each additional pass is only $10)</a></li>
-						</ul>
-						<!-- END Marked List -->
-						<a href="#" class="btn btn-lg btn-primary">Book Now</a>
+            <section class="well-md well-md--inset-2 text-center bg-secondary-2 packages-holder">
+                <div class="container-partial-fluid">
+                    <h2>Packages</h2>
+                    <h6>*Individual tickets cost $50 per person</h6>
+                    <div class="row offset-4 flow-offset-2 text-center text-sm-left auto-clear">
+                        <div class="col-sm-6 col-md-4">
+                            <div class='box_cnt'>
+                                <h3>Basic Package</h3>
+                                <p class="text-left">Price: <br />$200 for a party of 5 <br />$30 for each additional person</p>
+                                <ul class="marked-list text-left white">
+                                    <li>All-day park access</li>
+                                    <li>2 Attraction passes per participant</li>
+                                </ul>
+                                <!-- END Marked List -->
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class='box_cnt'>
+                                <h3>Deluxe Package</h3>
+                                <p class="text-left">Price: <br />$300 for a party of 5 <br />$30 for each additional person</p>
+                                <ul class="marked-list text-left white">
+                                    <li>All-day park access</li>
+                                    <li>3 Attraction passes per participant</li>
+                                    <li>Free 5 Stars T-Shirt</li>
+                                </ul>
+                                <!-- END Marked List -->
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class='box_cnt'>
+                                <h3>Ultimate Blast Package</h3>
+                                <p class="text-left">Price: <br />$400 for a party of 5 <br />$30 for each additional person</p>
+                                <ul class="marked-list text-left white">
+                                    <li>All-day park access</li>
+                                    <li>5 Attraction passes per participant</li>
+                                    <li>Free meal voucher for each participant</li>
+                                    <li>5 Stars T-Shirt and 5 Stars water bottle</li>
+                                </ul>
+                                <!-- END Marked List -->
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class='box_cnt'>
+                                <h3>Party Package</h3>
+                                <p class="text-left">Price: <br />$450 for a party of 10 <br />$20 for each additional person</p>
+                                <ul class="marked-list text-left white">
+                                    <li>All-day park access</li>
+                                    <li>Free parking</li>
+                                    <li>Party lounge access</li>
+                                    <li>Party themed photos</li>
+                                </ul>
+                                <!-- END Marked List -->
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class='box_cnt'>
+                                <h3>Holiday Package</h3>
+                                <p class="text-left">Price: <br />$250 for a party of 5 <br />$20 for each additional person</p>
+                                <ul class="marked-list text-left white">
+                                    <li>All-day park access</li>
+                                    <li>2 Attraction passes per participant</li>
+                                    <li>Holiday themed Five Stars t-shirt</li>
+                                    <li>Holiday themed photos</li>
+                                </ul>
+                                <!-- END Marked List -->
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class='box_cnt'>
+                                <h3>Behind the Scenes Package</h3>
+                                <p class="text-left">Price: <br />$350 for a party of 5 <br />$40 for each additional person</p>
+                                <ul class="marked-list text-left white">
+                                    <li>All-day park access</li>
+                                    <li>3 Attraction passes per participant</li>
+                                    <li>Behind the scenes tour of the 5 Stars facility</li>
+                                </ul>
+                                <!-- END Marked List -->
+                            </div>
+                        </div>
+                    </div>
+                    <h6 class="grey-color quick-message">*please call if your party size is greater than one hundred people</h6>
+                    <a href="#modal" id="modalOpen" class="btn btn-lg btn-primary btn-xl">Make a reservation</a>
+                </div>
+            </section>
+
+            <!--modal section-->
+		    <div id="modal">
+		        <div class="modal-content">
+		            <div class="container" style="margin-top: 55px">
+						<h2>Make a reservation</h2>
+                        <p>*We are not taking payments because this is not a real company.</p>
+						
+							<!-- RD-Mailform -->
+							<form class="rd-mailform package-pricing" id="form">
+								<input type="hidden" name="form-type" value="contact"/>
+								<fieldset>
+							
+									<input type="text" placeholder="Party name" id="name" />
+                                    <p class="error-text" id="nameError">Please enter a valid name</p>
+                                    
+                                    <input type="text" placeholder="Reservation date" id="date" />
+                                    <p class="error-text" id="dateError">Please select a date</p>
+
+									<input type="number" placeholder="Number of people in party" id="people" />
+                                    <p class="error-text" id="peopleError">Please enter a valid number of people</p>
+                                    
+                                    <select id="package">
+                                        <option disabled value="" selected>Select a package</option>
+                                        <option value="none">No package</option>
+                                        <option value="1">Basic Package</option>
+                                        <option value="2">Deluxe Package</option>
+                                        <option value="3">Ultimate Blast Package</option>
+                                        <option value="4">Party Package</option>
+                                        <option value="5">Holiday Package</option>
+                                        <option value="6">Behind the Scenes Package</option>
+                                    </select>
+                                    <p class="error-text" id="packageError">Please select a package</p>
+
+									<input type="phone" placeholder="Phone number" id="phone" />
+                                    <p class="error-text" id="phoneError">Please enter a valid phone number</p>
+                                    
+                                    <input type="email" placeholder="Email" id="email" />
+                                    <p class="error-text" id="emailError">Please enter a valid email</p>
+                                    
+                                    <textarea placeholder="Additional details (not required)" id="details" ></textarea>
+							
+									<div class="mfControls buttonHolder">
+                                        <h3 class="orderPrice">Price: <span id="priceValue">$0</span></h3>
+										<span class="close-modal">
+											<a href="#" class="btn btn-primary btn-md cancel-button">Cancel</a>
+										</span>
+										<button class="btn btn-primary btn-md submit-button" type="submit">Send message</button>
+									</div>
+							
+									<div class="mfInfo"></div>
+								</fieldset>
+							</form>
+							<!-- END RD-Mailform -->
+
 					</div>
-				</div>
-				<!-- END Box -->
+		        </div>
+		    </div>
 
-				<!-- Box -->
-				<div class='box box-clear box-md text-center text-md-left'>
-					<div class='box_left'><img src="{{ url_for('static', filename='public/images/page-03_img02.jpg') }}" alt=""></div>
-					<div class='box_cnt'>
-						<h3>Shopping Package</h3>
-						<p class="text-left">Package includes:</p>
-						<!-- Marked List -->
-						<ul class="marked-list text-left">
-							<li><a href="#">Complimentary wireless Internet access</a></li>
-							<li><a href="#">Climate-controlled, heated underground parking </a></li>
-							<li><a href="#">Shuttle service to and from</a></li>
-							<li><a href="#">Complimentary luggage and shopping bag storage</a></li>
-						</ul>
-						<!-- END Marked List -->
-						<a href="#" class="btn btn-lg btn-primary">Book Now</a>
-					</div>
-				</div>
-				<!-- END Box -->
-
-				<!-- Box -->
-				<div class='box box-clear box-md text-center text-md-left'>
-					<div class='box_left'><img src="{{ url_for('static', filename='public/images/page-03_img03.jpg') }}" alt=""></div>
-					<div class='box_cnt'>
-						<h3>Water Park + Hotel Deals</h3>
-						<p class="text-left">Package includes:</p>
-						<!-- Marked List -->
-						<ul class="marked-list text-left">
-							<li><a href="#">Overnight accommodations in a spacious guest room</a></li>
-							<li><a href="#">Two to four passes to Water Park </a></li>
-							<li><a href="#">Convenient walk-up access to the park</a></li>
-						</ul>
-						<!-- END Marked List -->
-						<a href="#" class="btn btn-lg btn-primary">Book Now</a>
-					</div>
-				</div>
-				<!-- END Box -->
-
-				<!-- Box -->
-				<div class='box box-clear box-md text-center text-md-left'>
-					<div class='box_left'><img src="{{ url_for('static', filename='public/images/page-03_img04.jpg') }}" alt=""></div>
-					<div class='box_cnt'>
-						<h3>Slumber Party Deal</h3>
-						<p class="text-left">Package includes:</p>
-						<!-- Marked List -->
-						<ul class="marked-list text-left">
-							<li><a href="#">Overnight accommodations in a spacious guest room</a></li>
-							<li><a href="#">50 arcade tokens to Northern Lights Arcade for each day of your stay</a></li>
-							<li><a href="#">One large 1-topping pizza delivered hot and fresh to your room</a></li>
-							<li><a href="#">One in-room movie during your stay</a></li>
-						</ul>
-						<!-- END Marked List -->
-						<a href="#" class="btn btn-lg btn-primary">Book Now</a>
-					</div>
-				</div>
-				<!-- END Box -->
-
-			</div>
-		</section>
-
-		<section class="well-lg parallax text-center" data-url="{{ url_for('static', filename='public/images/parallax-1.jpg') }}"  data-mobile="true">
-      <div class="container">
-      	<h1>2016 Season Passes On Sale Now - Best Value for Fun!</h1>
-      </div>
-    </section>
-
-	</main>
-	{% include "public_pages/includes/footer.html" %}
-</div>
-
-{%include "public_pages/includes/scripts.html" %}
+        </main>
+        {% include "public_pages/includes/footer.html" %}
+    </div>
+    {%include "public_pages/includes/scripts.html" %}
+    <script src="{{ url_for("static", filename="public/js/animatedModal.min.js") }}"></script>
+    <script src="{{ url_for('static', filename='public/lib/jquery-form/jquery.form.js') }}"></script>
+	<script src="{{ url_for('static', filename='public/js/jquery.rd-mailform.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='public/js/picker.js') }}"></script>
+    <script src="{{ url_for('static', filename='public/js/picker.date.js') }}"></script>
+    <script>
+        var packages = {
+            1: {
+                price: 200,
+                size: 5,
+                additional: 30
+            },
+            2: {
+                price: 300,
+                size: 5,
+                additional: 30
+            },
+            3: {
+                price: 400,
+                size: 5,
+                additional: 30
+            },
+            4: {
+                price: 450,
+                size: 10,
+                additional: 20
+            },
+            5: {
+                price: 250,
+                size: 5,
+                additional: 20
+            },
+            6: {
+                price: 350,
+                size: 5,
+                additional: 40
+            },
+        }
+        
+        $("#modalOpen").animatedModal({
+            modalTarget: "modal",
+            animatedOut:'bounceOutDown'
+        });
+        
+        var today = new Date((new Date()).valueOf());
+        
+        $('#date').pickadate({
+          disable: [
+            { from: [0,0,0], to: today }
+          ]
+        })
+        
+        $("#people").bind("keyup mouseup", priceUpdate)
+        $("#package").change(priceUpdate)
+        
+        function priceUpdate(e) {
+            var people = $("#people").val()
+            var package = $("#package").val()
+            
+            if (people == "") {
+                $("#priceValue").html("$0")
+            } else {
+                if ((people <= 0 || people > 100) && people != "") {
+                $("#priceValue").html("Invalid amount of people")
+            } else if (!package || package == "none") {
+                $("#priceValue").html("$" + 50 * people)
+            } else {
+                var currentPackage = packages[package]
+                if (people > currentPackage.size) { //more people than the package allows
+                    var price = currentPackage.price + ((people - currentPackage.size) * currentPackage.additional)
+                    $("#priceValue").html("$" + price)
+                } else {
+                    $("#priceValue").html("$" + currentPackage.price)
+                }
+                
+            }
+            }
+        }
+        
+        $("#form").submit(function(e) {
+            e.preventDefault()
+            $(".error-text").hide()
+            
+            var formIsValid = true
+            
+            var name = $("#name").val()
+            var date = new Date($("#date").val())
+            var people = $("#people").val()
+            var package = $("#package").val()
+            var phone = $("#phone").val()
+            var email = $("#email").val()
+            var details = $("#details").val()
+            
+            if (!name) {
+                $("#nameError").show()
+                formIsValid = false
+            }
+            
+            if (date == "Invalid Date") {
+                $("#dateError").show()
+                formIsValid = false
+            }
+            
+            if (!people || (people <= 0 || people >= 100)) {
+                $("#peopleError").show()
+                formIsValid = false
+            }
+            
+            if (!package) {
+                $("#packageError").show()
+                formIsValid = false
+            }
+            
+            if (!phone.match(/^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/)) {
+                $("#phoneError").show()
+                formIsValid = false
+            }
+            
+            var emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            if (!emailRegex.test(email)) {
+                $("#emailError").show()
+                formIsValid = false
+            }
+            
+            if (formIsValid) {
+                $.post("/api/register", {
+                    name: name,
+                    people: people,
+                    package: package,
+                    phone: phone,
+                    email: email,
+                    details: details,
+                    day: date.getDate(),
+                    year: date.getFullYear(),
+                    month: date.getMonth() + 1
+                }, function(e) {
+                    if (e== "true") {
+                        $("#form")[0].reset() //reset form
+                        $(".close-modal").click() //close modal
+                        alert("good")
+                    } else {
+                        alert("bad")
+                    }
+                })
+            }
+        })
+    </script>
 </body>
+
 </html>
