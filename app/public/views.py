@@ -21,6 +21,23 @@ def addReservation(name, day, month, year, people, package, phone, email, detail
 		cur = con.cursor(mdb.cursors.DictCursor)
 		cur.execute(query)
 
+def peopleOnDay(day, month, year): #adds a reservation
+	con = mdb.connect('localhost', 'root', 'visibilitymatters', 'fbla')
+	query = "select COALESCE(SUM(people),0) people from reservations where date = str_to_date('" + month + "/" + day + "/" + year + "', '%c/%e/%Y');"
+	with con:
+		cur = con.cursor(mdb.cursors.DictCursor)
+		cur.execute(query)
+		rows = cur.fetchall()
+	return int(rows[0]["people"])
+
+def getPeople():
+    con = mdb.connect('localhost', 'root', 'visibilitymatters', 'fbla')
+    query = "select people from people"
+    with con:
+        cur = con.cursor(mdb.cursors.DictCursor)
+        cur.execute(query)
+        rows = cur.fetchall()
+    return rows[0]["people"]
 
 
 
@@ -59,8 +76,13 @@ def apiAddReservation():
         year = request.form["year"]
         people = request.form["people"]
         package = request.form["package"]
+        if package == "none":
+            package = "0"
         phone = request.form["phone"]
         email = request.form["email"]
         details = request.form["details"]
+        amountOfPeople = peopleOnDay(day, month, year) + int(people)
+        if amountOfPeople > int(getPeople()):
+            return "full"
         addReservation(name, day, month, year, people, package, phone, email, details)
         return "true"

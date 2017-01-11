@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='public/css/rd-mailform.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='public/css/classic.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='public/css/classic.date.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='public/css/remodal.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='public/css/remodal-default-theme.css') }}">
 </head>
 
 <body>
@@ -22,7 +24,7 @@
         <!--========================================================
 	                          CONTENT
 	=========================================================-->
-        <main>
+        <main class="remodal-bg">
 
             <section class="well-md well-md--inset-2 text-center bg-secondary-2 packages-holder">
                 <div class="container-partial-fluid">
@@ -153,7 +155,7 @@
 									<div class="mfControls buttonHolder">
                                         <h3 class="orderPrice">Price: <span id="priceValue">$0</span></h3>
 										<span class="close-modal">
-											<a href="#" class="btn btn-primary btn-md cancel-button">Cancel</a>
+											<a href="#" class="btn btn-primary btn-md cancel-button" id="cancelButton">Cancel</a>
 										</span>
 										<button class="btn btn-primary btn-md submit-button" type="submit">Send message</button>
 									</div>
@@ -166,16 +168,47 @@
 					</div>
 		        </div>
 		    </div>
+            
+            <div class="remodal" id="successModal">
+              <button data-remodal-action="close" class="remodal-close"></button>
+              <h1 style="color: #3e3e3e">Success!</h1>
+              <p>
+                You reservation has been made. Please show your card to attendants when you arrive at the park to redeem your tickets.
+              </p>
+              <br>
+              <button data-remodal-action="confirm" class="remodal-confirm">OK</button>
+            </div>
+            
+            <div class="remodal" id="failureModal">
+              <button data-remodal-action="close" class="remodal-close"></button>
+              <h1 style="color: #3e3e3e">Failure!</h1>
+              <p>
+                You reservation failed to be placed. Please try again at a later time.
+              </p>
+              <br>
+              <button data-remodal-action="confirm" class="remodal-confirm">OK</button>
+            </div>
+            
+            <div class="remodal" id="fullModal">
+              <button data-remodal-action="close" class="remodal-close"></button>
+              <h1 style="color: #3e3e3e">Oops!</h1>
+              <p>
+                We're fully booked for this day. Try rescheduling for another time.
+              </p>
+              <br>
+              <button data-remodal-action="confirm" class="remodal-confirm">OK</button>
+            </div>
 
         </main>
         {% include "public_pages/includes/footer.html" %}
     </div>
     {%include "public_pages/includes/scripts.html" %}
-    <script src="{{ url_for("static", filename="public/js/animatedModal.min.js") }}"></script>
+    <script src="{{ url_for('static', filename='public/js/animatedModal.min.js') }}"></script>
     <script src="{{ url_for('static', filename='public/lib/jquery-form/jquery.form.js') }}"></script>
 	<script src="{{ url_for('static', filename='public/js/jquery.rd-mailform.min.js') }}"></script>
     <script src="{{ url_for('static', filename='public/js/picker.js') }}"></script>
     <script src="{{ url_for('static', filename='public/js/picker.date.js') }}"></script>
+    <script src="{{ url_for('static', filename='public/js/remodal.min.js') }}"></script>
     <script>
         var packages = {
             1: {
@@ -310,12 +343,24 @@
                     if (e== "true") {
                         $("#form")[0].reset() //reset form
                         $(".close-modal").click() //close modal
-                        alert("good")
+                        successModal.open()
+                    } else if (e == "full") {
+                        fullModal.open()
                     } else {
-                        alert("bad")
+                        $("#form")[0].reset() //reset form
+                        $(".close-modal").click() //close modal
+                        failureModal.open()
                     }
                 })
             }
+        })
+        
+        var successModal = $('#successModal').remodal();
+        var failureModal = $("#failureModal").remodal();
+        var fullModal = $("#fullModal").remodal();
+        
+        $("#cancelButton").click(function() {
+            $("#form")[0].reset() //reset form
         })
     </script>
 </body>

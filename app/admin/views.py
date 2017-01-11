@@ -2,6 +2,7 @@
 from flask import Blueprint, render_template, redirect, session, request
 import MySQLdb as mdb
 import json
+import hashlib
 
 blueprint = Blueprint('admin', __name__, url_prefix='/admin', static_folder='../static', template_folder='../templates')
 
@@ -15,12 +16,92 @@ def getHours(): #gets fec hours
 		rows = cur.fetchall()
 	return rows
 
+def getReservations(): #gets fec reservations
+	con = mdb.connect('localhost', 'root', 'visibilitymatters', 'fbla')
+	query = "select * from reservations where date > CURDATE()"
+	with con:
+		cur = con.cursor(mdb.cursors.DictCursor)
+		cur.execute(query)
+		rows = cur.fetchall()
+	return rows
+
+def deleteReservation(i): #deletes fec reservations
+    con = mdb.connect('localhost', 'root', 'visibilitymatters', 'fbla')
+    query = "delete from reservations where id = " + str(i)
+    with con:
+        cur = con.cursor(mdb.cursors.DictCursor)
+        cur.execute(query)
+
 def updateDay(day, start, end, o): #gets fec hours
 	con = mdb.connect('localhost', 'root', 'visibilitymatters', 'fbla')
 	query = "update hours set start = " + start + ", end = " + end + ", open = " + o + " where day = '" + day + "'"
 	with con:
 		cur = con.cursor(mdb.cursors.DictCursor)
 		cur.execute(query)
+
+def updatePassword(password):
+    con = mdb.connect('localhost', 'root', 'visibilitymatters', 'fbla')
+    query = "update password set password = '" + hashlib.md5(password).hexdigest() + "'"
+    with con:
+        cur = con.cursor(mdb.cursors.DictCursor)
+        cur.execute(query)
+
+def updatePeople(people):
+    con = mdb.connect('localhost', 'root', 'visibilitymatters', 'fbla')
+    query = "update people set people = " + str(people)
+    with con:
+        cur = con.cursor(mdb.cursors.DictCursor)
+        cur.execute(query)
+
+def updatePhone(phone):
+    con = mdb.connect('localhost', 'root', 'visibilitymatters', 'fbla')
+    query = "update phone set phone = '" + str(phone) + "'"
+    with con:
+        cur = con.cursor(mdb.cursors.DictCursor)
+        cur.execute(query)
+
+def updateEmail(email):
+    con = mdb.connect('localhost', 'root', 'visibilitymatters', 'fbla')
+    query = "update email set email = '" + email + "'"
+    with con:
+        cur = con.cursor(mdb.cursors.DictCursor)
+        cur.execute(query)
+
+def getPassword():
+    con = mdb.connect('localhost', 'root', 'visibilitymatters', 'fbla')
+    query = "select password from password"
+    with con:
+        cur = con.cursor(mdb.cursors.DictCursor)
+        cur.execute(query)
+        rows = cur.fetchall()
+    return rows[0]["password"]
+
+def getPeople():
+    con = mdb.connect('localhost', 'root', 'visibilitymatters', 'fbla')
+    query = "select people from people"
+    with con:
+        cur = con.cursor(mdb.cursors.DictCursor)
+        cur.execute(query)
+        rows = cur.fetchall()
+    return rows[0]["people"]
+
+def getPhone():
+    con = mdb.connect('localhost', 'root', 'visibilitymatters', 'fbla')
+    query = "select phone from phone"
+    with con:
+        cur = con.cursor(mdb.cursors.DictCursor)
+        cur.execute(query)
+        rows = cur.fetchall()
+    return rows[0]["phone"]
+
+def getEmail():
+    con = mdb.connect('localhost', 'root', 'visibilitymatters', 'fbla')
+    query = "select email from email"
+    with con:
+        cur = con.cursor(mdb.cursors.DictCursor)
+        cur.execute(query)
+        rows = cur.fetchall()
+    return rows[0]["email"]
 
 #session functions
 def login():
@@ -43,6 +124,20 @@ def formRoute():
     else:
         return redirect("/admin/login")
 
+@blueprint.route('/reservations')
+def reservationsRoute():
+    if "admin" in session:
+        return render_template("admin_pages/reservations.html", page="reservations", reservations=getReservations())
+    else:
+        return redirect("/admin/login")
+
+@blueprint.route('/settings')
+def settingsRoute():
+    if "admin" in session:
+        return render_template("admin_pages/settings.html", page="settings", people=getPeople(), phone=getPhone(), email=getEmail())
+    else:
+        return redirect("/admin/login")
+
 #login routes
 @blueprint.route('/login', methods=["GET", "POST"])
 def loginRoute():
@@ -56,7 +151,7 @@ def loginRoute():
                 pass
             return render_template("admin_pages/login.html", page="login", error=error)
         if request.method == "POST":
-                if request.form["password"] == "the password":
+                if hashlib.md5(request.form["password"]).hexdigest() == getPassword():
                     login()
                     return redirect("/admin")
                 else:
@@ -85,5 +180,43 @@ def apiUpdateHoursRoute():
     else:
         return "false"
 
+@blueprint.route('/api/deletereservation', methods=["POST"])
+def apiDeleteReservationRoute():
+    if "admin" in session:
+        deleteReservation(request.form["id"])
+        return "true"
+    else:
+        return "false"
 
+@blueprint.route('/api/updatepassword', methods=["POST"])
+def apiUpdatePasswordRoute():
+    if "admin" in session:
+        updatePassword(request.form["password"])
+        return "true"
+    else:
+        return "false"
+
+@blueprint.route('/api/updatepeople', methods=["POST"])
+def apiUpdatePeopleRoute():
+    if "admin" in session:
+        updatePeople(request.form["people"])
+        return "true"
+    else:
+        return "false"
+
+@blueprint.route('/api/updatephone', methods=["POST"])
+def apiUpdatePhoneRoute():
+    if "admin" in session:
+        updatePhone(request.form["phone"])
+        return "true"
+    else:
+        return "false"
+
+@blueprint.route('/api/updateemail', methods=["POST"])
+def apiUpdateEmailRoute():
+    if "admin" in session:
+        updateEmail(request.form["email"])
+        return "true"
+    else:
+        return "false"
 

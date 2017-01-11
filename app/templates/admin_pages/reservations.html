@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "admin_pages/includes/headerContent.html" %}
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        
+        {% include "admin_pages/includes/leftNav.html" %}
+
+        {% include "admin_pages/includes/topNav.html" %}
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="clearfix"></div>
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Reservations</h2>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <br />
+                    <div id='calendar'></div>
+                </div>
+              </div>
+            </div>
+
+            
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+        
+        <!-- calendar modal -->
+        <div id="reservationModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Reservation</h4>
+              </div>
+              <div class="modal-body">
+                <table class="table">
+                      <thead>
+                        <tr>
+                          <th>Field</th>
+                          <th>Input</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Party name</td>
+                          <td id="name"></td>
+                        </tr>
+                        <tr>
+                          <td>Date</td>
+                          <td id="reservationDate"></td>
+                        </tr>
+                          <tr>
+                          <td># of people</td>
+                          <td id="reservationPeople"></td>
+                        </tr>
+                          <tr>
+                          <td>Package</td>
+                          <td id="reservationPackage"></td>
+                        </tr>
+                        <tr>
+                          <td>Phone</td>
+                          <td id="reservationPhone"></td>
+                        </tr>
+                        <tr>
+                          <td>Email</td>
+                          <td id="reservationEmail"></td>
+                        </tr>
+                        <tr>
+                          <td>Details</td>
+                          <td id="reservationDetails"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+              </div>
+              <div class="modal-footer">
+              	<button type="button" class="btn btn-default btn-danger antoclose" style="margin-bottom: 0px" id="deleteEvent" data-dismiss="modal">Delete</button>
+                <button type="button" class="btn btn-default btn-primary antoclose" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% include "admin_pages/includes/footer.html" %}
+
+      </div>
+    </div>
+
+    {% include "admin_pages/includes/scripts.html" %}
+    <script>
+        function formatPhoneNumber(s) {
+          var s2 = (""+s).replace(/\D/g, '');
+          var m = s2.match(/^(\d{3})(\d{3})(\d{4})$/);
+          return (!m) ? null : "(" + m[1] + ") " + m[2] + "-" + m[3];
+        }
+
+        
+        var reservations = [
+            {% for reservation in reservations %}
+                {
+                    id: {{ reservation['id'] }},
+                    name: "{{ reservation['name'] | escapejs }}",
+                    start: moment("{{ reservation['date'] }}", "YYYY-MM-DD hh:mm:ss").toDate(),
+                    people: {{ reservation['people'] }},
+                    package: "{{ getPackage(reservation['package']) }}",
+                    phone: "{{ reservation['phone'] | escapejs }}",
+                    email: "{{ reservation['email'] | escapejs }}",
+                    details: "{{ reservation['details'] | escapejs }}",
+                },
+            {% endfor %}
+        ]
+        
+        $(window).load(function() {
+
+            var calendar = $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                selectable: false,
+                selectHelper: false,
+                eventClick: function(event) {
+                    $("#name").text(event.name)
+                    $("#deleteEvent").data("event", event.id)
+                    $("#reservationDate").text(moment(event.start).format('MMMM d, YYYY'))
+                    $("#reservationPeople").text(event.people)
+                    $("#reservationPackage").text(event.package)
+                    $("#reservationPhone").text(formatPhoneNumber(event.phone))
+                    $("#reservationEmail").text(event.email)
+                    $("#reservationDetails").text(event.details)
+                    
+                    $("#reservationModal").modal("show")
+                    calendar.fullCalendar('unselect');
+                },
+                eventRender: function(event, element) {
+                    element.text(event.name)
+                },
+                editable: false,
+                events: reservations
+            });
+            
+        });
+
+        $("#deleteEvent").click(function(e) {
+        	$.post("/admin/api/deletereservation", {id: $(e.target).data("event")}, function(e) {
+        		if (e == "true") {
+                    new PNotify({
+                        title: 'Success',
+                        text: 'The reservation was deleted successfully!',
+                        type: 'success',
+                        styling: 'bootstrap3'
+                    });
+                    $('#calendar').fullCalendar('removeEvents', $(e.target).data("event"));
+                } else {
+                    new PNotify({
+                        title: 'Failure',
+                        text: 'The reservation was not updated.',
+                        type: 'error',
+                        styling: 'bootstrap3'
+                    });
+                }
+        	})
+        })
+    </script>
+  </body>
+</html>
