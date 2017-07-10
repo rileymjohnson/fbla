@@ -21,9 +21,9 @@ def getPackage(num):
 
 def formatHours(hour):
     if hour <= 12:
-        return str(hour) + "A.M."
+        return str(hour) + " A.M."
     else:
-        return str(hour - 12) + "P.M."
+        return str(hour - 12) + " P.M."
 
 _js_escapes = {
         '\\': '\\u005C',
@@ -101,7 +101,11 @@ def register_jinja_extensions(app):
 def register_errorhandlers(app):
     def render_error(error):
         error_code = getattr(error, 'code', 500)
-        return render_template("error.html", error=error_code), error_code
+        print error_code
+        if error_code == 404:
+            return render_template("notfound.html", error=error_code), error_code
+        else:
+            return render_template("error.html", error=error_code), error_code
     for errcode in [401, 404, 500]:
         app.errorhandler(errcode)(render_error)
     return None

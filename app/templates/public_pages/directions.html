@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--main header content-->
 	{% include "public_pages/includes/headerContent.html" %}
-    <!--additonal page specific styles-->
     <link href="{{ url_for("static", filename="public/css/directions.css")}}" rel="stylesheet" />
     <link href='https://api.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.css' rel='stylesheet' />
     <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v2.2.0/mapbox-gl-directions.css' type='text/css' />
 </head>
 <body>
-    <div id="map"></div>
+    <div id="map" role="main" aria-label="Map to Five Stars FEC"></div>
+    
     <script src='https://api.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.js'></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v2.2.0/mapbox-gl-directions.js'></script>
     <script src="{{ url_for("static", filename="public/js/directions.js")}}"></script>

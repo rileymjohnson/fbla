@@ -1,4 +1,4 @@
-var StartingLocation = [-95.3609405, 29.7065219];
+var StartingLocation = [-101.795467, 35.221816];
 mapboxgl.accessToken = 'pk.eyJ1IjoicmlsZXltam9obnNvbiIsImEiOiJjaXY1bGptMzAwMWhtMnluNnd2bzk1cjBzIn0.FicxbRtge8W-_mxFb_Qk1A';
 var map = new mapboxgl.Map({
     container: 'map',
@@ -14,7 +14,7 @@ var directions = new mapboxgl.Directions({
 
 //set destination on map load
 map.on("load", function() {
-    directions.setDestination("3738 Parkwood Dr Houston, TX 77021-1510")
+    directions.setDestination("799 N Grand St, Amarillo, Texas 79107, United States")
 })
 
 map.addControl(directions);

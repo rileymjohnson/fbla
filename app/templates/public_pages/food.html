@@ -3,26 +3,29 @@
 <head>
     <!--main header content-->
 	{% include "public_pages/includes/headerContent.html" %}
+    <link rel="stylesheet" href="{{ url_for("static", filename="public/css/food.css") }}">
 </head>
 <body>
 <div class="page">
 	<!--========================================================
-	                          HEADER
+	HEADER
 	=========================================================-->
-	<header>
+	<header role="banner">
         {% include "public_pages/includes/brand.html" %}
 
-		<section class="bg-image-1"></section>
+		<section class="bg-image-1" role="img" alt="An overhead shot over part of the park."></section>
 
 		{% include "public_pages/includes/nav.html" %}
 	</header>
+
 	<!--========================================================
-	                          CONTENT
+	MAIN
 	=========================================================-->
-	<main>
-		<section class="bg-primary well-md well-md--inset-2 text-center">
+	<main role="main">
+
+		<section class="bg-primary well-md well-md--inset-2 text-center" aria-labelledby="snackbarHeader">
 			<div class="container-partial-fluid">
-				<h2>5 Stars Snackbar</h2>
+				<h2 id="snackbarHeader">5 Stars Snackbar</h2>
 				<h5 class="menu-item-title">Entrees:</h5>
 				<ul class="marked-list text-left">
 					<li>
@@ -31,7 +34,7 @@
 							<h6 class="price">5.00</h6>
 							<br />
 						</div>
-						<p>Classic cheese pizza slice, tomato sauce and crispy white crust.</p>
+						<p class="menu-item-description">Classic cheese pizza slice, tomato sauce and crispy white crust</p>
 					</li>
 					<li>
 						<div>
@@ -39,7 +42,7 @@
 							<h6 class="price">6.00</h6>
 							<br />
 						</div>
-						<p>Classic pepperoni pizza slice, cheese and tomato sauce on crispy white crust.</p>
+						<p class="menu-item-description">Classic pepperoni pizza slice, cheese and tomato sauce on crispy white crust</p>
 					</li>
 					<li>
 						<div>
@@ -47,7 +50,7 @@
 							<h6 class="price">6.00</h6>
 							<br />
 						</div>
-						<p>Aged cheddar melted onto buttered toasted whole wheat slices topped with turkey breast.</p>
+						<p class="menu-item-description">Aged cheddar melted onto buttered toasted whole wheat slices topped with turkey breast</p>
 					</li>
 					<li>
 						<div>
@@ -55,7 +58,7 @@
 							<h6 class="price">6.00</h6>
 							<br />
 						</div>
-						<p>American cheese, beef, tomato, lettuce, onion, choice of dressing.</p>
+						<p class="menu-item-description">American cheese, beef, tomato, lettuce, onion, choice of dressing</p>
 					</li>
 					<li>
 						<div>
@@ -63,7 +66,7 @@
 							<h6 class="price">4.00</h6>
 							<br />
 						</div>
-						<p>Hotdog, chili, cheese, onions, mustard.</p>
+						<p class="menu-item-description">Hotdog, chili, cheese, onions, mustard</p>
 					</li>
 				</ul>
 				<h5 class="menu-item-title">Sides:</h5>
@@ -74,7 +77,7 @@
 							<h6 class="price">3.00</h6>
 							<br />
 						</div>
-						<p>Salted fried potato strips.</p>
+						<p class="menu-item-description">Salted fried potato strips</p>
 					</li>
 					<li>
 						<div>
@@ -82,7 +85,7 @@
 							<h6 class="price">4.00</h6>
 							<br />
 						</div>
-						<p>Battered onion sliced into rings and deep fried.</p>
+						<p class="menu-item-description">Battered onion sliced into rings and deep fried</p>
 					</li>
 				</ul>
 				<h5 class="menu-item-title">Drinks:</h5>
@@ -93,23 +96,23 @@
 							<h6 class="price">2.00</h6>
 							<br />
 						</div>
-						<p>Bottled water.</p>
+						<p class="menu-item-description">Bottled water</p>
 					</li>
 					<li>
 						<div>
-							<h6>Coca-cola products</h6>
+							<h6>Coca-Cola products</h6>
 							<h6 class="price">3.00</h6>
 							<br />
 						</div>
-						<p>Sprite, Diet Coke, Fanta, Powerade, Minute Maid Lemonade.</p>
+						<p class="menu-item-description">Sprite, Diet Coke, Fanta, Powerade, Minute Maid Lemonade</p>
 					</li>
 				</ul>
 			</div>
 		</section>
 
-		<section class="bg-secondary-1 well-md well-md--inset-2 text-center">
+		<section class="bg-secondary-1 well-md well-md--inset-2 text-center" aria-labelledby="loungeHeader">
 			<div class="container-partial-fluid">
-				<h2>5 Stars Lounge</h2>
+				<h2 id="loungeHeader">5 Stars Lounge</h2>
 				<h5 class="menu-item-title">Salads:</h5>
 				<ul class="marked-list text-left">
 					<li>
@@ -118,7 +121,7 @@
 							<h6 class="price">8.00</h6>
 							<br />
 						</div>
-						<p>Romaine Lettuce, parmasean, crutons, ceasar dressing.</p>
+						<p class="menu-item-description">Romaine Lettuce, Parmesan, croutons, ceasar dressing</p>
 					</li>
 					<li>
 						<div>
@@ -126,7 +129,7 @@
 							<h6 class="price">8.00</h6>
 							<br />
 						</div>
-						<p>Tomato, cucumber, onion, feta cheese, olives, green peppers, olives, olive oil.</p>
+						<p class="menu-item-description">Tomato, cucumber, onion, feta cheese, olives, green peppers, olives, olive oil</p>
 					</li>
 					<li>
 						<div>
@@ -134,7 +137,7 @@
 							<h6 class="price">12.00</h6>
 							<br />
 						</div>
-						<p>Shrimp, squid, crab, peppers, celery, onions, olives, cornichon, parsley, choice of dressing.</p>
+						<p class="menu-item-description">Shrimp, squid, crab, peppers, celery, onions, olives, cornichon, parsley, choice of dressing</p>
 					</li>
 				</ul>
 				<h5 class="menu-item-title">Sandwiches:</h5>
@@ -145,7 +148,7 @@
 							<h6 class="price">8.00</h6>
 							<br />
 						</div>
-						<p>Lettuce, tomato, Genoa salami, red onion, zucchini, and house made pesto on an artisan loaf.</p>
+						<p class="menu-item-description">Lettuce, tomato, Genoa salami, red onion, zucchini, and house made pesto on an artisan loaf</p>
 					</li>
 					<li>
 						<div>
@@ -153,7 +156,7 @@
 							<h6 class="price">7.00</h6>
 							<br />
 						</div>
-						<p>Lettuce, tomato, and pan fried and breaded chicken on toasted whole wheat slices.</p>
+						<p class="menu-item-description">Lettuce, tomato, and pan fried chicken on toasted whole wheat slices</p>
 					</li>
 					<li>
 						<div>
@@ -161,7 +164,7 @@
 							<h6 class="price">7.00</h6>
 							<br />
 						</div>
-						<p>Toasted baguette, aged cheddar and honey ham, a French classic.</p>
+						<p class="menu-item-description">Toasted baguette, aged cheddar and honey ham, a French classic</p>
 					</li>
 				</ul>
 				<h5 class="menu-item-title">Drinks:</h5>
@@ -172,16 +175,21 @@
 							<h6 class="price">3.00-7.00</h6>
 							<br />
 						</div>
-						<p>Bud Light, Blue Moon, Budweiser, Pinot Grigio, Pinot Gris, Chardonnay.</p>
+						<p class="menu-item-description">Bud Light, Blue Moon, Budweiser, Pinot Grigio, Pinot Gris, Chardonnay</p>
 					</li>
 				</ul>
 			</div>
 		</section>
-
+		
 	</main>
+
+	<!--========================================================
+    FOOTER
+    =========================================================-->
 	{% include "public_pages/includes/footer.html" %}
+	
 </div>
 
-{%include "public_pages/includes/scripts.html" %}
+<script src="{{ url_for("static", filename="public/js/food.js") }}"></script>
 </body>
 </html>

@@ -2,65 +2,74 @@
 <html lang="en">
 
 <head>
-    <!--main header content-->
-    {% include "public_pages/includes/headerContent.html" %}
+	<!--main header content-->
+	{% include "public_pages/includes/headerContent.html" %}
+	<link rel="stylesheet" href="{{ url_for("static", filename="public/css/attractions.css") }}">
 </head>
 
 <body>
-    <div class="page">
-        <!--========================================================
-	                          HEADER
-	=========================================================-->
-        <header>
-            {% include "public_pages/includes/brand.html" %}
-            <section class="bg-image-1"></section>
-            {% include "public_pages/includes/nav.html" %}
-        </header>
-        <!--========================================================
-	                          CONTENT
-	=========================================================-->
-        <main>
-            <section class="well-md well-md--inset-2 text-center bg-secondary-1">
-                <div class="container-partial-fluid">
-                    <h2>Our attractions</h2>
-                    <div class="row offset-4 flow-offset-2 text-center text-sm-left auto-clear">
-                        <div class="col-sm-6 col-md-4">
-                            <img src="{{ url_for('static', filename='public/images/attraction-1.jpg') }}" alt="">
-                            <h4 class="secondary-1">5 Starcade</h4>
-                            <p>Win tickets playing pinball, skee ball, video games, and more at our amazing arcade, featuring classics and new favorites alike!</p>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <img src="{{ url_for('static', filename='public/images/attraction-2.jpg') }}" alt="">
-                            <h4 class="secondary-1">Speed Karts</h4>
-                            <p>Take to the roads on our premier race track and compete with your friends to prove your skills with blazing speed!</p>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <img src="{{ url_for('static', filename='public/images/attraction-3.jpg') }}" alt="">
-                            <h4 class="secondary-1">Merry-Go-Round</h4>
-                            <p>Go for a fun, cathartic spin on this classic carnival ride!</p>
-                        </div>
-                        <div class="col-sm-6 col-md-clear col-md-4">
-                            <img src="{{ url_for('static', filename='public/images/attraction-4.jpg') }}" alt="">
-                            <h4 class="secondary-1">Dropcoaster</h4>
-                            <p>Hold on tight and get ready for a rapid journey through the ups and downs of our genuine roller coaster!</p>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <img src="{{ url_for('static', filename='public/images/attraction-5.jpg') }}" alt="">
-                            <h4 class="secondary-1">Liftoff Swings</h4>
-                            <p>Feel the breeze in your hair while taking an exciting spin on our 20-foot-elevated swing ride!</p>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <img src="{{ url_for('static', filename='public/images/attraction-6.jpg') }}" alt="">
-                            <h4 class="secondary-1">Sidewinder</h4>
-                            <p>Gratify your inner daredevil and strap in for an exhilarating ride and an experience you’ll never forget!</p>
-                        </div>
+<div class="page">
+    <!--========================================================
+    HEADER
+    =========================================================-->
+    <header role="banner">
+        {% include "public_pages/includes/brand.html" %}
+        <section class="bg-image-1" role="img" alt="An overhead shot over part of the park."></section>
+        {% include "public_pages/includes/nav.html" %}
+    </header>
+
+    <!--========================================================
+    MAIN
+    =========================================================-->
+    <main role="main">
+    
+        <section class="well-md well-md--inset-2 text-center bg-secondary-1" aria-labelledby="attractionsHeader">
+            <div class="container-partial-fluid">
+                <h2 id="attractionsHeader">Our Attractions</h2>
+                <div class="row offset-4 flow-offset-2 text-center text-sm-left auto-clear">
+                    <div class="col-sm-6 col-md-4">
+                        <img src="{{ url_for('static', filename='public/images/attraction-1.jpg') }}" alt="A set of arcade machines." role="presentation">
+                        <h4 class="secondary-1">5 Starcade</h4>
+                        <p>Win tickets playing pinball, skee ball, video games, and more at our amazing arcade, featuring classics and new favorites alike!</p>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <img src="{{ url_for('static', filename='public/images/attraction-2.jpg') }}" alt="A group of bumper cars." role="presentation">
+                        <h4 class="secondary-1">Speed Karts</h4>
+                        <p>Take to the roads on our premier race track and compete with your friends to prove your skills with blazing speed!</p>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <img src="{{ url_for('static', filename='public/images/attraction-3.jpg') }}" alt="A colorfully painted Merry-Go-Round." role="presentation">
+                        <h4 class="secondary-1">Merry-Go-Round</h4>
+                        <p>Go for a fun, cathartic spin on this classic carnival ride!</p>
+                    </div>
+                    <div class="col-sm-6 col-md-clear col-md-4">
+                        <img src="{{ url_for('static', filename='public/images/attraction-4.jpg') }}" alt="People riding a roller coaster." role="presentation">
+                        <h4 class="secondary-1">Dropcoaster</h4>
+                        <p>Hold on tight and get ready for a rapid journey through the ups and downs of our genuine roller coaster!</p>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <img src="{{ url_for('static', filename='public/images/attraction-5.jpg') }}" alt="People swinging on swings high in the air." role="presentation">
+                        <h4 class="secondary-1">Liftoff Swings</h4>
+                        <p>Feel the breeze in your hair while taking an exciting spin on our 20-foot-elevated swing ride!</p>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <img src="{{ url_for('static', filename='public/images/attraction-6.jpg') }}" alt="People hanging suspended in the air attached to a colorful contraption." role="presentation">
+                        <h4 class="secondary-1">Sidewinder</h4>
+                        <p>Gratify your inner daredevil and strap in for an exhilarating ride and an experience you’ll never forget!</p>
                     </div>
                 </div>
-            </section>
-        </main>
-        {% include "public_pages/includes/footer.html" %}
-    </div>
-    {%include "public_pages/includes/scripts.html" %}
-</body>
+            </div>
+        </section>
 
+    </main>
+
+    <!--========================================================
+    FOOTER
+    =========================================================-->
+    {% include "public_pages/includes/footer.html" %}
+
+</div>
+
+<script src="{{ url_for("static", filename="public/js/attractions.js") }}"></script>
+</body>
 </html>

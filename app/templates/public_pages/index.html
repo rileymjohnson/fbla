@@ -1,83 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--main header content-->
 	{% include "public_pages/includes/headerContent.html" %}
-    <!--additonal page specific styles-->
+
     <link href='https://api.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.css' rel='stylesheet' />
-    <link rel="stylesheet" href="{{ url_for("static", filename="public/css/camera.css") }}">
-	<link rel="stylesheet" href="{{ url_for("static", filename="public/css/map.css") }}">
-	<link rel="stylesheet" href="{{ url_for("static", filename="public/css/countdown.css") }}">
-	<link rel="stylesheet" href="{{ url_for("static", filename="public/css/slick.css") }}">
-	<link rel="stylesheet" href="{{ url_for("static", filename="public/css/slick-theme.css") }}">
+    <link rel="stylesheet" href="{{ url_for("static", filename="public/css/index.css") }}">
 </head>
 <body>
 <div class="page">
 	<!--========================================================
-	                          HEADER
+	HEADER
 	=========================================================-->
-	<header>
+	<header role="banner">
         {% include "public_pages/includes/brand.html" %}
 
-		<section>
-			<!-- Camera -->
+        <!-- image carousel -->
+		<section role="region" aria-label="Main Image Carousel">
 			<div class="your-class">
-			    <div><div class="bg-image-carousel" style="background-image: url(/static/public/images/camera-1.png)"></div></div>
-			    <div><div class="bg-image-carousel" style="background-image: url(/static/public/images/camera-2.png)"></div></div>
-			    <div><div class="bg-image-carousel" style="background-image: url(/static/public/images/camera-3.png)"></div></div>
-			    <div><div class="bg-image-carousel" style="background-image: url(/static/public/images/camera-4.png)"></div></div>
+			    <div>
+			    	<img data-lazy="/static/public/images/camera-1.png" class="bg-image-carousel" role="presentation" alt="A happy family riding on a roller coaster." />
+			    </div>
+			    <div>
+			    	<img data-lazy="/static/public/images/camera-2.png" class="bg-image-carousel" role="presentation" alt="A dart stuck into a dart board." />
+			    </div>
+			    <div>
+			    	<img data-lazy="/static/public/images/camera-3.png" class="bg-image-carousel" role="presentation" alt="A bucket full of popcorn." />
+			    </div>
+			    <div>
+			    	<img data-lazy="/static/public/images/camera-4.png" class="bg-image-carousel" role="presentation" alt="A bowling ball rolling toward a set of bowling pins." />
+			    </div>
 			</div>
-			<!-- END Camera -->
 		</section>
+		<!-- end image carousel -->
 
 		{% include "public_pages/includes/nav.html" %}
 	</header>
+
 	<!--========================================================
-	                          CONTENT
+	MAIN
 	=========================================================-->
-	<main>
+	<main role="main">
 
-		<section class="well-md well-md--inset-1 bg-secondary-1 text-center">
+		<section class="well-md well-md--inset-1 bg-secondary-1 text-center" aria-labelledby="openHeader">
 			<div class="container-partial-fluid">
-				<h2>Now Open!</h2>
+				<h2 id="openHeader">Now Open!</h2>
 				<div class="fluid-row offset-4 flow-offset-2 text-center text-sm-left">
-					
 					<div class="col-sm-12 col-md-4 text-center">
-						<img src="{{ url_for('static', filename='public/images/home-1.jpg') }}" alt="" class="square">
+						<img src="{{ url_for('static', filename='public/images/home-1.jpg') }}" role="presentation" alt="A swing with kids on it." class="square">
 					</div>
-
 					<div class="col-sm-12 col-md-4 text-center">
-						<img src="{{ url_for('static', filename='public/images/home-2.jpg') }}" alt="" class="square">
+						<img src="{{ url_for('static', filename='public/images/home-2.jpg') }}" role="presentation" alt="A colorfully painted horse on a Merry-Go-Round." class="square">
 					</div>
-
 					<div class="col-sm-12 col-md-4 text-center">
-						<img src="{{ url_for('static', filename='public/images/home-3.jpg') }}" alt="" class="square">
+						<img src="{{ url_for('static', filename='public/images/home-3.jpg') }}" role="presentation" alt="Several go carts on a go cart track." class="square">
 					</div>
-
 				</div>
 			</div>
 		</section>
 
-		<section class="well-md well-md--inset-2 text-center bg-secondary-2">
+		<section class="well-md well-md--inset-2 text-center bg-secondary-2" aria-labelledby="welcomeHeader">
 			<div class="container-partial-fluid">
-				<h2>Welcome!</h2>
-				<h6 class="black">Welcome to Five Stars Family Entertainment Center! We are an amusement park local to Houston, Texas that is geared towards great fun for the whole family. We guarantee a wonderful time for customers of all ages! Spend a day winning fantastic prizes in our world class arcade, go for a thrilling ride on one of our exciting roller coasters, or relax in our exotic Five Star Lounge. We’re all about your enjoyment here at Five Stars, and every one of our employees is hand picked to help you have the best time you can. The fun never stops at Five Stars, and we can’t wait for you to stop by and have the time of your life!</h6>
+				<h2 id="welcomeHeader">Welcome!</h2>
+				<h6 class="black welcome-text">Welcome to Five Stars Family Entertainment Center! We are an amusement park local to Houston, Texas that is geared towards great fun for the whole family. We guarantee a wonderful time for customers of all ages! Spend a day winning fantastic prizes in our world class arcade, go for a thrilling ride on one of our exciting roller coasters, or relax in our exotic Five Star Lounge. We’re all about your enjoyment here at Five Stars, and every one of our employees is hand picked to help you have the best time you can. The fun never stops at Five Stars, and we can’t wait for you to stop by and have the time of your life!</h6>
 			</div>
 		</section>
 
-		<section class="bg-primary well-md well-md--inset-2 text-center">
+		<section class="bg-primary well-md well-md--inset-2 text-center" aria-labelledby="eventsHeader">
 			<div class="container-partial-fluid">
-				<h2>Upcoming Events</h2>
+				<h2 id="eventsHeader">Upcoming Events</h2>
 				<div class="row offset-1 flow-offset-1">
-
 					<div class="col-md-4">
 						<div class="event-post text-left">
 							<p class="meta"><span>20</span>may/2017</p>
-							<h4>Field<br>day</h4>
+							<h4>Field<br>Day</h4>
 							<p>Want to take a break from thrill seeking? Come to our huge outdoor field day event where kids and adults can relax and have a wonderful time playing outdoor games and activites! A free drink comes with each ticket to keep you refreshed while you're out on the field!</p>
 						</div>
 					</div>
-
 					<div class="col-md-4">
 						<div class="event-post text-left">
 							<p class="meta"><span>03</span>june/2017</p>
@@ -85,134 +83,111 @@
 							<p>Enjoy an amazing day of rollarcoasters and thrilling rides with an evening of popcorn, drinks, and a movie. All tickets come with a free popcorn and soda pass along with an outdoor movie!</p>
 						</div>
 					</div>
-
 					<div class="col-md-4">
 						<div class="event-post text-left">
 							<p class="meta"><span>04</span>june/2017</p>
-							<h4>Patriot's<br>day</h4>
+							<h4>Patriot's<br>Day</h4>
 							<p>USA themed attractions with a cozy night of fireworks. Patriots Day comes with an amazing discount of 10% off tickets and snacks. Be sure to come and represent America!</p>
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</section>
-        
-        <section class="well-md well-md--inset-2 text-center hours">
+
+		<section class="well-md well-md--inset-2 text-center hours" aria-labelledby="hoursHeader">
 			<div class="container-partial-fluid">
-				<h2>Hours</h2>
-				<ul class="marked-list text-left">
-					<li>
-						<div>
-							<h6>Monday</h6>
-                            {% if hours[0]["open"] == 1 %}
-							<h6 class="time">{{ formatHours(hours[0]["start"]) }} - {{ formatHours(hours[0]["end"]) }}</h6>
-                            {% else %}
-                            <h6 class="time">CLOSED</h6>
-                            {% endif %}
-							<br />
-						</div>
-					</li>
-                    <li>
-						<div>
-							<h6>Tuesday</h6>
-							{% if hours[1]["open"] == 1 %}
-							<h6 class="time">{{ formatHours(hours[1]["start"]) }} - {{ formatHours(hours[1]["end"]) }}</h6>
-                            {% else %}
-                            <h6 class="time">CLOSED</h6>
-                            {% endif %}
-							<br />
-						</div>
-					</li>
-                    <li>
-						<div>
-							<h6>Wednesday</h6>
-							{% if hours[2]["open"] == 1 %}
-							<h6 class="time">{{ formatHours(hours[2]["start"]) }} - {{ formatHours(hours[2]["end"]) }}</h6>
-                            {% else %}
-                            <h6 class="time">CLOSED</h6>
-                            {% endif %}
-							<br />
-						</div>
-					</li>
-                    <li>
-						<div>
-							<h6>Thursday</h6>
-							{% if hours[3]["open"] == 1 %}
-							<h6 class="time">{{ formatHours(hours[3]["start"]) }} - {{ formatHours(hours[3]["end"]) }}</h6>
-                            {% else %}
-                            <h6 class="time">CLOSED</h6>
-                            {% endif %}
-							<br />
-						</div>
-					</li>
-                    <li>
-						<div>
-							<h6>Friday</h6>
-							{% if hours[4]["open"] == 1 %}
-							<h6 class="time">{{ formatHours(hours[4]["start"]) }} - {{ formatHours(hours[4]["end"]) }}</h6>
-                            {% else %}
-                            <h6 class="time">CLOSED</h6>
-                            {% endif %}
-							<br />
-						</div>
-					</li>
-                    <li>
-						<div>
-							<h6>Saturday</h6>
-							{% if hours[5]["open"] == 1 %}
-							<h6 class="time">{{ formatHours(hours[5]["start"]) }} - {{ formatHours(hours[5]["end"]) }}</h6>
-                            {% else %}
-                            <h6 class="time">CLOSED</h6>
-                            {% endif %}
-							<br />
-						</div>
-					</li>
-                    <li>
-						<div>
-							<h6>Sunday</h6>
-							{% if hours[6]["open"] == 1 %}
-							<h6 class="time">{{ formatHours(hours[6]["start"]) }} - {{ formatHours(hours[6]["end"]) }}</h6>
-                            {% else %}
-                            <h6 class="time">CLOSED</h6>
-                            {% endif %}
-							<br />
-						</div>
-					</li>
-				</ul>
+				<h2 id="hoursHeader">Hours</h2>
+				<div class="hour-left">
+					<h6>
+						Monday:
+					</h6>
+				</div>
+				<div class="hour-right">
+					<h6>
+						{% if hours[0]["open"] == 1 %}{{ formatHours(hours[0]["start"]) }} - {{ formatHours(hours[0]["end"]) }}{% else %}CLOSED{% endif %}
+					</h6>
+				</div>
+				<div class="hour-left">
+					<h6>
+						Tuesday:
+					</h6>
+				</div>
+				<div class="hour-right">
+					<h6>
+						{% if hours[1]["open"] == 1 %}{{ formatHours(hours[1]["start"]) }} - {{ formatHours(hours[1]["end"]) }}{% else %}CLOSED{% endif %}
+					</h6>
+				</div>
+				<div class="hour-left">
+					<h6>
+						Wednesday:
+					</h6>
+				</div>
+				<div class="hour-right">
+					<h6>
+						{% if hours[2]["open"] == 1 %}{{ formatHours(hours[2]["start"]) }} - {{ formatHours(hours[2]["end"]) }}{% else %}CLOSED{% endif %}
+					</h6>
+				</div>
+				<div class="hour-left">
+					<h6>
+						Thursday:
+					</h6>
+				</div>
+				<div class="hour-right">
+					<h6>
+						{% if hours[3]["open"] == 1 %}{{ formatHours(hours[3]["start"]) }} - {{ formatHours(hours[3]["end"]) }}{% else %}CLOSED{% endif %}
+					</h6>
+				</div>
+				<div class="hour-left">
+					<h6>
+						Friday:
+					</h6>
+				</div>
+				<div class="hour-right">
+					<h6>
+						{% if hours[4]["open"] == 1 %}{{ formatHours(hours[4]["start"]) }} - {{ formatHours(hours[4]["end"]) }}{% else %}CLOSED{% endif %}
+					</h6>
+				</div>
+				<div class="hour-left">
+					<h6>
+						Saturday:
+					</h6>
+				</div>
+				<div class="hour-right">
+					<h6>
+						{% if hours[5]["open"] == 1 %}{{ formatHours(hours[5]["start"]) }} - {{ formatHours(hours[5]["end"]) }}{% else %}CLOSED{% endif %}
+					</h6>
+				</div>
+				<div class="hour-left">
+					<h6>
+						Sunday:
+					</h6>
+				</div>
+				<div class="hour-right">
+					<h6>
+						{% if hours[6]["open"] == 1 %}{{ formatHours(hours[6]["start"]) }} - {{ formatHours(hours[6]["end"]) }}{% else %}CLOSED{% endif %}
+					</h6>
+				</div>
 			</div>
 		</section>
 
-		<!-- Google Map -->
-		<section class="map">
-		  <div id="google-map" class="map_model" data-y="40.721114" data-x="-73.884811"></div>
-		  <ul class="map_locations">
-		    <li data-y="29.7065219" data-x="-95.3609405">
-		      <p> 3738 Parkwood Dr Houston, TX 77021-1510. <span>919 360-9335</span></p>
-		    </li>
-		  </ul>
+		<section class="map" aria-label="Map of FEC">
+			<div id="google-map" class="map_model" data-y="40.721114" data-x="-73.884811"></div>
+			<ul class="map_locations">
+				<li data-y="29.7065219" data-x="-95.3609405">
+					<p> 799 N Grand St, Amarillo, Texas 79107, United States.</p>
+				</li>
+			</ul>
 		</section>
-		<!-- END Google Map -->
+
 	</main>
+
+	<!--========================================================
+    FOOTER
+    =========================================================-->
 	{% include "public_pages/includes/footer.html" %}
+
 </div>
 
-{%include "public_pages/includes/scripts.html" %}
-<script src='https://api.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.js'></script>
-<script src="{{ url_for("static", filename="public/js/slick.js") }}"></script>
-<script src="{{ url_for("static", filename="public/js/index.js") }}"></script>
-<script>
-	$(document).ready(function(){
-      $('.your-class').slick({
-     	arrows: true,
-     	slidesToShow: 1,
-		slidesToScroll: 1,
-		autoplay: true,
-		autoplaySpeed: 7000,
-		//prevArrow:"<img class='a-left control-c prev slick-prev' src='../images/shoe_story/arrow-left.png'>",
-    	//nextArrow:"<img class='a-right control-c next slick-next' src='../images/shoe_story/arrow-right.png'>"
-      });
-    });
-</script>
+<script src="{{ url_for("static", filename="public/js/home.js") }}"></script>
 </body>
 </html>

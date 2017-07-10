@@ -1201,13 +1201,8 @@ h2 + img {
   margin-top: 0px;
 }
 .contact-info a[href^="mailto:"] {
-  text-decoration: none;
   font-size: 14px;
   font-weight: 500;
-}
-.contact-info a[href^="mailto:"]:hover {
-  color: inherit;
-  text-decoration: underline;
 }
 
 /*
@@ -1794,12 +1789,56 @@ ul li h6.price:before {
 }
 
 .hours .time {
-    float: right;
     display: inline;
 }
 
 .hours * {
     color: #3e3e3e;
+}
+
+.hours div h6 {
+	display: inline;
+}
+
+.buffer {
+	width: 20px;
+}
+
+.hour-left {
+	margin-left: 30%;
+	width: 20%;
+	float: left;
+	text-align: left;
+}
+
+.hour-left * {
+	text-align: left;
+}
+
+.hour-right {
+	margin-right: 30%;
+	width: 20%;
+	float: right;
+	text-align: right;
+}
+
+.hour-right * {
+	text-align: right;
+}
+
+@media (max-width: 600px) {
+  .hour-right {
+  	margin-right: 10%;
+  	width: 40%;
+  }
+  .hour-left {
+  	margin-left: 10%;
+  	width: 40%;
+  }
+}
+
+.hours-list li {
+	text-align: center;
 }
 
 .black {
@@ -1924,9 +1963,7 @@ p {
   height: 36.48vw;
   width: 100%;
   min-height: 300px; 
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center; 
+  object-fit: cover;
 }
 
 .slick-prev {

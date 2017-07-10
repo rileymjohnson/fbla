@@ -13,7 +13,14 @@
                   <li><a href="/admin"><i class="fa fa-home"></i> Home</a></li>
                   <li><a href="/admin/hours"><i class="fa fa-clock-o"></i> Modify Hours</a></li>
                   <li><a href="/admin/reservations"><i class="fa fa-calendar"></i> Reservations</a></li>
-                  <li><a href="/admin/settings"><i class="fa fa-key"></i> Change Settings</a></li>
+                  <li><a href="/admin/settings"><i class="fa fa-cog"></i> Change Settings</a></li>
+                  <li><a href="/admin/messages"><i class="fa fa-envelope"></i> Messages 
+                    {% if messageNum == 0 %}
+                      <span class="label label-info label-as-badge" id="messageNum">{{ messageNum }}</span>
+                    {% else %}
+                      <span class="label label-success label-as-badge" id="messageNum">{{ messageNum }}</span>
+                    {% endif %}
+                  </a></li>
                 </ul>
               </div>
 

@@ -1,42 +1,42 @@
 <title>5 Stars Admin Panel - {{ page.title() }}</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="apple-touch-icon" sizes="57x57" href="/static/admin/favicon/apple-touch-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/static/admin/favicon/apple-touch-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/static/admin/favicon/apple-touch-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/static/admin/favicon/apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/static/admin/favicon/apple-touch-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/static/admin/favicon/apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/static/admin/favicon/apple-touch-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/static/admin/favicon/apple-touch-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/static/admin/favicon/apple-touch-icon-180x180.png">
-<link rel="icon" type="image/png" href="/static/admin/favicon/favicon-32x32.png" sizes="32x32">
-<link rel="icon" type="image/png" href="/static/admin/favicon/android-chrome-192x192.png" sizes="192x192">
-<link rel="icon" type="image/png" href="/static/admin/favicon/favicon-16x16.png" sizes="16x16">
-<link rel="manifest" href="/static/admin/favicon/manifest.json">
-<link rel="mask-icon" href="/static/admin/favicon/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="/static/admin/favicon/favicon.ico">
-<meta name="msapplication-TileColor" content="#00aba9">
-<meta name="msapplication-TileImage" content="/static/admin/favicon/mstile-144x144.png">
-<meta name="msapplication-config" content="/static/admin/favicon/browserconfig.xml">
-<meta name="theme-color" content="#ffffff">
-<!-- Bootstrap -->
-<link href="{{ url_for('static', filename='admin/lib/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
-<!-- Font Awesome -->
-<link href="{{ url_for('static', filename='admin/lib/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
-<!-- iCheck -->
-<link href="{{ url_for('static', filename='admin/lib/iCheck/skins/flat/green.css') }}" rel="stylesheet">
-<!-- switchery -->
-<link href="{{ url_for('static', filename='admin/lib/switchery/dist/switchery.min.css') }}" rel="stylesheet">
-<!-- PNotify -->
-<link href="{{ url_for('static', filename='admin/lib/pnotify/dist/pnotify.css') }}" rel="stylesheet">
-<link href="{{ url_for('static', filename='admin/lib/pnotify/dist/pnotify.buttons.css') }}" rel="stylesheet">
-<!-- bootstrap-progressbar -->
-<link href="{{ url_for('static', filename='admin/lib/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet">
-<!-- FullCalendar -->
-<link href="{{ url_for('static', filename='admin/lib/fullcalendar/dist/fullcalendar.min.css') }}" rel="stylesheet">
-<link href="{{ url_for('static', filename='admin/lib/fullcalendar/dist/fullcalendar.print.css') }}" media="print" rel="stylesheet">
-<!-- Custom Theme Style -->
-<link href="{{ url_for('static', filename='admin/css/custom.min.css') }}" rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/admin/favicon/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/admin/favicon/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/admin/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/admin/favicon/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/admin/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/admin/favicon/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/admin/favicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/admin/favicon/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/admin/favicon/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/static/admin/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/static/admin/favicon/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/static/admin/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/static/admin/favicon/manifest.json">
+    <link rel="mask-icon" href="/static/admin/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/static/admin/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="msapplication-TileImage" content="/static/admin/favicon/mstile-144x144.png">
+    <meta name="msapplication-config" content="/static/admin/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Bootstrap -->
+    <link href="{{ url_for('static', filename='admin/lib/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="{{ url_for('static', filename='admin/lib/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="{{ url_for('static', filename='admin/lib/iCheck/skins/flat/green.css') }}" rel="stylesheet">
+    <!-- switchery -->
+    <link href="{{ url_for('static', filename='admin/lib/switchery/dist/switchery.min.css') }}" rel="stylesheet">
+    <!-- PNotify -->
+    <link href="{{ url_for('static', filename='admin/lib/pnotify/dist/pnotify.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='admin/lib/pnotify/dist/pnotify.buttons.css') }}" rel="stylesheet">
+    <!-- bootstrap-progressbar -->
+    <link href="{{ url_for('static', filename='admin/lib/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet">
+    <!-- FullCalendar -->
+    <link href="{{ url_for('static', filename='admin/lib/fullcalendar/dist/fullcalendar.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='admin/lib/fullcalendar/dist/fullcalendar.print.css') }}" media="print" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="{{ url_for('static', filename='admin/css/custom.min.css') }}" rel="stylesheet">

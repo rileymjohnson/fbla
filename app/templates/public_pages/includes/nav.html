@@ -1,30 +1,25 @@
-
 {% set nav = [
-    ('home', '/'),
-    ('food', '/food'),
-    ('attractions', '/attractions'),
-    ('Reservations', '/reservations'),
-    ('contact Us', '/contact')
+		('home', '/'),
+		('food', '/food'),
+		('attractions', '/attractions'),
+		('Reservations', '/reservations'),
+		('contact Us', '/contact')
 ] -%}
-
 {% set page = page|default('home') -%}
-
-<!-- Stuck Container -->
-<div id="stuck_container" class="stuck_container">
-   <div class="container">
-      <!-- Menu  -->
-      <nav class="nav">
-         <ul class="sf-menu" data-type="navbar">
-            {% for name, href in nav %}
-             {% if page == name %}
-             <li class="active"><a href="{{ href }}">{{ name.title() }}</a></li>
-             {% else %}
-             <li><a href="{{ href }}">{{ name.title() }}</a></li>
-             {% endif %}
-             {% endfor %}
-         </ul>
-      </nav>
-      <!-- END Menu -->
-   </div>
-</div>
-<!-- END Stuck Container -->
+		<!-- Stuck Container -->
+		<div id="stuck_container" class="stuck_container" role="navigation">
+			<div class="container">
+				<!-- Menu	-->
+				<nav class="nav" role="menubar" aria-label="Main Menu">
+					<ul class="sf-menu" data-type="navbar" role="menu">
+						<li role="menuitem" {% if page == "home" %}class="active"{% endif %}><a href="/">Home</a></li>
+						<li role="menuitem" {% if page == "food" %}class="active"{% endif %}><a href="/food">Food</a></li>
+						<li role="menuitem" {% if page == "attractions" %}class="active"{% endif %}><a href="/attractions">Attractions</a></li>
+						<li role="menuitem" {% if page == "reservations" %}class="active"{% endif %}><a href="/reservations">Reservations</a></li>
+						<li role="menuitem" {% if page == "contact us" %}class="active"{% endif %}><a href="/contact">Contact Us</a></li>
+					</ul>
+				</nav>
+				<!-- END Menu -->
+			</div>
+		</div>
+		<!-- END Stuck Container -->

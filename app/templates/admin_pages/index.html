@@ -1,8 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     {% include "admin_pages/includes/headerContent.html" %}
-  </head>
+    <style>
+        #mapContainer {
+            height: 30vw;
+            min-height: 400px;
+            margin: 0 auto;
+        }
+        
+        .loading {
+            margin-top: 10em;
+            text-align: center;
+            color: gray;
+        }
+    </style>
+</head>
 
   <body class="nav-md">
     <div class="container body">
@@ -21,22 +35,7 @@
               <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Line graph<small>Sessions</small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
+                    <h2>Reservations by Month</h2>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
@@ -48,22 +47,7 @@
               <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Bar graph <small>Sessions</small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
+                    <h2>Reservations by Day</h2>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
@@ -74,81 +58,14 @@
             </div>
             <div class="clearfix"></div>
             <div class="row">
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Radar <small>Sessions</small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-                    <canvas id="canvasRadar"></canvas>
-                  </div>
-                </div>
-              </div>
 
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Donut Graph <small>Sessions</small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-                    <canvas id="canvasDoughnut"></canvas>
-                  </div>
-                </div>
-              </div>
             </div>
             <div class="clearfix"></div>
             <div class="row">
               <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Pie Graph Chart <small>Sessions</small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
+                    <h2>Packages by Type</h2>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
@@ -160,29 +77,15 @@
               <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Pie Area Graph <small>Sessions</small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
+                    <h2>Reservations by County</h2>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <canvas id="polarArea"></canvas>
+                    <div id="mapContainer"></div>
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
@@ -196,6 +99,15 @@
     {% include "admin_pages/includes/scripts.html" %}
     <!--additional page specific scripts-->
     <script src="{{ url_for('static', filename='admin/lib/Chart.js/dist/Chart.min.js') }}"></script>
+    <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/mapdata/countries/us/us-tx-all.js"></script>
+    <script>
+        var lineChartData = [{% for r in reservationsByMonth %}{% if not loop.last %}{{ r["count"] }},{% else %}{{ r["count"] }}{% endif %}{% endfor %}]
+        var barChartData = [{% for r in reservationsByDay %}{% if not loop.last %}{{ r["count"] }},{% else %}{{ r["count"] }}{% endif %}{% endfor %}]
+        var pieChartData = [{% for r in packagesByType %}{% if not loop.last %}{{ r["count"] }},{% else %}{{ r["count"] }}{% endif %}{% endfor %}]
+        var counties = [{% for r in reservationsByCounty %}{% if not loop.last %}{"hc-key": "{{ r["county"] }}","value": {{ r["count"] }}},{% else %}{"hc-key": "{{ r["county"] }}","value": {{ r["count"] }}}{% endif %}{% endfor %}]
+    </script>
     <script src="{{ url_for('static', filename='admin/js/index.js') }}"></script>
 
   </body>

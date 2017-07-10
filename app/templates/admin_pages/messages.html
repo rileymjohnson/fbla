@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "admin_pages/includes/headerContent.html" %}
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        
+        {% include "admin_pages/includes/leftNav.html" %}
+
+        {% include "admin_pages/includes/topNav.html" %}
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Messages</h2>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                      {%if messages | length > 0 %}
+                    <div class="row" id="messageContainer">
+                      <div class="col-sm-3 mail_list_column" id="messageList">
+                        {% for message in messages %}
+                        <a href="#" class="messageButton" data-id="{{ message['id'] }}" id="{{ message['id'] }}">
+                          <div class="mail_list">
+                            <div class="right">
+                              <h3>{{ message["name"].title() }} <small>{{ message["smalldate"] }}</small></h3>
+                            </div>
+                          </div>
+                        </a>
+                        {% endfor %}
+                      </div>
+                      <!-- /MAIL LIST -->
+
+                      <!-- CONTENT MAIL -->
+                      <div class="col-sm-9 mail_view">
+                        <div class="inbox-body">
+                          <div class="mail_heading row">
+                              
+                            <div class="col-md-8">
+                              <button class="btn btn-sm btn-default btn-danger" id="deleteButton" data-id="{{ messages[0]['id'] }}" type="button" data-placement="top" data-toggle="tooltip" data-original-title="Trash"><i class="fa fa-trash-o"></i></button>
+                            </div>
+                            <div class="col-md-4 text-right">
+                              <p class="date" id="messageDate"> {{ messages[0]["date"] }} @ {{ messages[0]["time"] }}</p>
+                            </div>
+                          </div>
+                            
+                            <div class="col-md-12">
+                                <h4 id="messageEmail"> From: <a href="mailto:{{ messages[0]['email'] }}">{{ messages[0]['email'] }}</a> <br /><small>Phone number: {{ messages[0]['phone'] }}</small>
+                              </h4>
+                            </div>
+                          <div class="view-mail">
+                            <p id="messageText">{{ messages[0]["message"] }}</p>
+                          </div>
+                        </div>
+
+                      </div>
+                      <!-- /CONTENT MAIL -->
+                    </div>
+                      {% else %}
+                      <div class="row">
+                          <h4>There are no messages at this time. Please try again later.</h4>
+                      </div>
+                      {% endif %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+
+        {% include "admin_pages/includes/footer.html" %}
+
+      </div>
+    </div>
+
+    {% include "admin_pages/includes/scripts.html" %}
+    <script>
+    var messages = {
+        {% for message in messages %}{% if not loop.last %}"{{ message["id"] }}": {message: "{{ message["message"] | escapejs }}",date: "{{ message["date"] }}",email: "{{ message["email"] }}",time: "{{ message['time'] }}",phone: "{{ message['phone'] }}"},{% else %}"{{ message["id"] }}": {message: "{{ message["message"] | escapejs }}",date: "{{ message["date"] }}",email: "{{ message["email"] }}",time: "{{ message['time'] }}",phone: "{{ message['phone'] }}"}{% endif %}{% endfor %}
+        }
+    </script>
+    <script src="{{ url_for('static', filename='admin/js/messages.js') }}"></script>
+  </body>
+</html>
